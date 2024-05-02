@@ -82,4 +82,10 @@ public class PlayerController : MonoBehaviour
             _fallVelocity = 0;
         }
     }
+
+    public void InteractiveMode()
+    {
+        GetComponent<PlayerController>().enabled = false;
+        GetComponent<CameraRotation>().enabled = false;
+    }
 }
