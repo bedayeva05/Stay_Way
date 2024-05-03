@@ -6,10 +6,14 @@ public class InteractiveMode : MonoBehaviour
 {
     public GameObject InteractiveMapUI;
 
-    public void TogglePlayerScripts()
+    public void PlayerControlFreeze()
     {
-        GetComponent<PlayerController>().enabled = false;
-        GetComponent<CameraRotation>().enabled = false;
-        InteractiveMapUI.SetActive(true);
+        GetComponent<PlayerController>().enabled = !GetComponent<PlayerController>().enabled;
+        GetComponent<CameraRotation>().enabled = !GetComponent<CameraRotation>().enabled;
     }
+    public void ShowingTheMap()
+    {
+        InteractiveMapUI.SetActive(!InteractiveMapUI.activeSelf);
+    }
+
 }

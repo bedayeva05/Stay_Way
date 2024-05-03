@@ -13,11 +13,11 @@ using UnityEditor;
 public class InteractiveButton : MonoBehaviour
 {
     public UnityEvent action;
-    //public bool destroyAfterExecute;
+    //public bool needsCondition;
 
     public GameObject buttonIcon;
 
-    private const KeyCode ButtonToPress = KeyCode.E;
+    private const KeyCode ButtonToPress = KeyCode.F;
 
     private bool _playerIsNearby;
 

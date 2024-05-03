@@ -7,10 +7,13 @@ public class PlayerController : MonoBehaviour
     public float gravity = 9.8f;
     public float jumpforce;
     public float speed;
-
+    
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
     private CharacterController _characterController;
+    
+    private bool shouldTeleport = false;
+    private Vector3 teleportTarget = Vector3.zero;
 
     void Start()
     {
@@ -21,12 +24,18 @@ public class PlayerController : MonoBehaviour
     {
         MovementUpdate();
         JumpUpdate();
+
     }
 
     void FixedUpdate()
     {
         MovementFixedUpdate();
         JumpFixedUpdate();
+        if (shouldTeleport)
+        {
+            transform.position = teleportTarget;
+            shouldTeleport = false; 
+        }
     }
 
     private void MovementUpdate()
@@ -82,10 +91,9 @@ public class PlayerController : MonoBehaviour
             _fallVelocity = 0;
         }
     }
-
-    public void InteractiveMode()
+    public void TriggerTeleport(Transform target)
     {
-        GetComponent<PlayerController>().enabled = false;
-        GetComponent<CameraRotation>().enabled = false;
+        teleportTarget = target.position;
+        shouldTeleport = true; 
     }
 }

@@ -5,12 +5,12 @@ using UnityEngine;
 public class TeleportPlayer : MonoBehaviour
 {
     public GameObject player;
-    public List<Transform> targetPoints;
-    public void TeleportTo(int targetPointIndex)
+
+    public void TeleportTo(Transform newPosition)
     {
         if (player != null)
         {
-            player.transform.position = targetPoints[targetPointIndex].position;
+            player.GetComponent<PlayerController>().TriggerTeleport(newPosition);
         }
     }
 }
