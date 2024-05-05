@@ -4,16 +4,34 @@ using UnityEngine;
 
 public class Column : MonoBehaviour
 {
-    public float rotationSpeed = 10f;
-    private float _currentAngle;
+    public float rotationSpeed = 30f;
+    public float targetRotationAngle = 90f;
 
-    public void RotateColumn()
+    private bool isRotating = false;
+    private float currentRotationAngle = 0f;
+
+    void Update()
     {
-        _currentAngle = transform.eulerAngles.y;
-        while (transform.eulerAngles.y != _currentAngle + 90)
+        if (isRotating)
         {
-            transform.Rotate(Vector3.back, rotationSpeed * Time.deltaTime);
-        }
+            float rotationStep = rotationSpeed * Time.deltaTime;
 
+            transform.Rotate(Vector3.back, rotationStep);
+
+            currentRotationAngle += rotationStep;
+
+            if (currentRotationAngle >= targetRotationAngle)
+            {
+                //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, targetRotationAngle, transform.rotation.eulerAngles.z);
+
+                isRotating = false;
+                currentRotationAngle = 0f;
+            }
+        }
+    }
+
+    public void StartRotation()
+    {
+        isRotating = true;
     }
 }
