@@ -9,7 +9,11 @@ public class MapUI : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             FindObjectOfType<InteractiveMode>().PlayerControlFreeze();
-            FindObjectOfType<InteractiveMode>().ShowingTheMap();
+            ShowingTheMap();
         }
+    }
+    public void ShowingTheMap()
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
     }
 }

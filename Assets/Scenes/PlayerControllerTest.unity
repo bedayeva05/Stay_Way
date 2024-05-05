@@ -1344,7 +1344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c88a551f76c3b4b89006bce47926ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractiveMapUI: {fileID: 1009243354}
 --- !u!1 &1107107839
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,7 +2598,7 @@ PrefabInstance:
         type: 3}
       propertyPath: action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1078004043}
+      objectReference: {fileID: 1009243359}
     - target: {fileID: 9147871927076153226, guid: e302fd80a4774f2489cb8a888ebe1459,
         type: 3}
       propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

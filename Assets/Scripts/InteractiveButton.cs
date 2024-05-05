@@ -47,6 +47,4 @@ public class InteractiveButton : MonoBehaviour
         buttonIcon.SetActive(false);
     }
 
-    
-
 }
