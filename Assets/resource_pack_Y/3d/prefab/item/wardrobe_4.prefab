@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6301699913466612104}
   - component: {fileID: 6979446082313291309}
   - component: {fileID: 5133837984547107559}
+  - component: {fileID: 6863819828822288928}
   m_Layer: 0
   m_Name: wardrobe_4
   m_TagString: Untagged
@@ -80,3 +81,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6863819828822288928
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647297667271086898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 25b55f692d12c584b96d6868771c3f97, type: 3}
