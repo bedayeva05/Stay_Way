@@ -11,20 +11,20 @@ public class Door : MonoBehaviour
     private Quaternion initialRotation;
     private Quaternion openRotation;
     private Quaternion closeRotation;
-
+    private BoxCollider collider;
     void Start()
     {
         initialRotation = transform.rotation;
+        collider = GetComponent<BoxCollider>();
         openRotation = Quaternion.Euler(initialRotation.eulerAngles.x, initialRotation.eulerAngles.y, initialRotation.eulerAngles.z + openAngle);
         closeRotation = Quaternion.Euler(initialRotation.eulerAngles.x, initialRotation.eulerAngles.y, initialRotation.eulerAngles.z + closeAngle);
     }
-
     public void ToggleDoor()
     {
+        collider.enabled = false;
         isOpen = !isOpen;
         enabled = true;
     }
-
     void Update()
     {
         Quaternion targetRotation = isOpen ? openRotation : closeRotation;
@@ -33,6 +33,7 @@ public class Door : MonoBehaviour
         {
             transform.rotation = targetRotation;
             enabled = false;
+            collider.enabled = true;
         }
     }
 }

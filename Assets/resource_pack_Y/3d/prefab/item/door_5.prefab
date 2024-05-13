@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 678308256337104980}
   - component: {fileID: 678308256337104971}
   - component: {fileID: 964326540600630231}
+  - component: {fileID: 6504362347029101605}
   m_Layer: 0
   m_Name: Cube.010
   m_TagString: Untagged
@@ -208,6 +209,19 @@ MonoBehaviour:
   openAngle: 90
   closeAngle: 0
   speed: 100
+--- !u!65 &6504362347029101605
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678308256337104969}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.020000018, z: 0.019368054}
+  m_Center: {x: 0.009398699, y: -0.00000047593593, z: 0.00031597356}
 --- !u!1001 &7680642215975620248
 PrefabInstance:
   m_ObjectHideFlags: 0
