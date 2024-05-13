@@ -114,7 +114,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 9.8
   jumpforce: 7
-  speed: 5
+  walkingSpeed: 3
+  runningSpeed: 7
+  maxStamina: 100
+  staminaDepletionRate: 60
+  staminaRecoveryRate: 10
 --- !u!143 &5482096136734571051
 CharacterController:
   m_ObjectHideFlags: 0
@@ -173,8 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48b5796bed765c4cb783e685fca39bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCharacter: {fileID: 0}
-  beatDistance: 0
+  audio: {fileID: 0}
+  prefab: {fileID: 0}
+  maxDistanceToPrefab: 0
 --- !u!1 &5482096136773399409
 GameObject:
   m_ObjectHideFlags: 0

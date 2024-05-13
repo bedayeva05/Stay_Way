@@ -6,18 +6,34 @@ public class PlayerController : MonoBehaviour
 {
     public float gravity = 9.8f;
     public float jumpforce;
-    public float speed;
+    public float walkingSpeed;
+    public float runningSpeed;
+
+    public float maxStamina;
+    public float staminaDepletionRate;
+    public float staminaRecoveryRate;
+
+    private float _currentSpeed;
+    private float _currentStamina;
+
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
+
     private CharacterController _characterController;
+
     private bool shouldTeleport = false;
+    private bool isRunning = false;
+
     private Vector3 teleportTarget = Vector3.zero;
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
+        _currentSpeed = walkingSpeed;
+        _currentStamina = maxStamina;
     }
     void Update()
     {
+        StaminaUpdate();
         MovementUpdate();
         JumpUpdate();
     }
@@ -29,6 +45,27 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = teleportTarget;
             shouldTeleport = false; 
+        }
+    }
+    private void StaminaUpdate()
+    {
+        if (isRunning && _currentStamina > 0)
+        {
+            _currentStamina -= staminaDepletionRate * Time.deltaTime;
+            if (_currentStamina <= 0)
+            {
+                _currentSpeed = walkingSpeed;
+                _currentStamina = 0;
+                isRunning = false;
+            }
+        }
+        else if (!isRunning && _currentStamina < maxStamina)
+        {
+            _currentStamina += staminaRecoveryRate * Time.deltaTime;
+            if (_currentStamina > maxStamina)
+            {
+                _currentStamina = maxStamina;
+            }
         }
     }
     private void MovementUpdate()
@@ -50,6 +87,32 @@ public class PlayerController : MonoBehaviour
         {
             _moveVector -= transform.right;
         }
+
+        if (Input.GetKey(KeyCode.LeftShift) && _currentStamina > 0)
+        {
+            isRunning = true;
+            _currentSpeed = runningSpeed;
+            _currentStamina -= staminaDepletionRate * Time.deltaTime;
+            if (_currentStamina <= 0)
+            {
+                _currentStamina = 0;
+                isRunning = false;
+                _currentSpeed = walkingSpeed; 
+            }
+        }
+        else
+        {
+            isRunning = false;
+            _currentSpeed = walkingSpeed; 
+            if (_currentStamina < maxStamina)
+            {
+                _currentStamina += staminaRecoveryRate * Time.deltaTime;
+                if (_currentStamina > maxStamina)
+                {
+                    _currentStamina = maxStamina;
+                }
+            }
+        }
     }
     private void JumpUpdate()
     {
@@ -60,7 +123,7 @@ public class PlayerController : MonoBehaviour
     }
     private void MovementFixedUpdate()
     {
-        _characterController.Move(_moveVector * speed * Time.deltaTime);
+        _characterController.Move(_moveVector * _currentSpeed * Time.deltaTime);
     }
 
     private void JumpFixedUpdate()
