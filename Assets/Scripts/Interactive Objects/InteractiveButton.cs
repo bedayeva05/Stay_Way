@@ -21,6 +21,10 @@ public class InteractiveButton : MonoBehaviour
 
     private Transform _playerTransform;
 
+    public void MustDo()
+    {
+        action?.Invoke();
+    }
     private void Update()
     {
         UpdatePressButton();

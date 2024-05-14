@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         if (shouldTeleport)
         {
             transform.position = teleportTarget;
-            shouldTeleport = false; 
+            shouldTeleport = false;
         }
     }
     private void StaminaUpdate()
