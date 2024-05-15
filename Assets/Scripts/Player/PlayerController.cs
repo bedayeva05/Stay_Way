@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
     }
     public void TriggerTeleport(Transform target)
     {
-        teleportTarget = target;
+        teleportTarget = target.position;
         shouldTeleport = true; 
     }
 }
