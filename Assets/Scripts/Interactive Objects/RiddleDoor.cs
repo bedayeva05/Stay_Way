@@ -4,43 +4,36 @@ using UnityEngine;
 
 public class RiddleDoor : MonoBehaviour
 {
-    public List<Vector3> positions = new List<Vector3>();
-    public List<GameObject> gameObjects = new List<GameObject>();
-    private Dictionary<Vector3, GameObject> positionGameObjectMap = new Dictionary<Vector3, GameObject>();
+    public List<Column> columns = new List<Column>();
+    public List<float> angles = new List<float>();
+    private Dictionary<Column, float> columnAngles = new Dictionary<Column, float>();
 
-    void Start()
+    void Update()
     {
-        for (int i = 0; i < positions.Count; i++)
-        {
-            positionGameObjectMap.Add(positions[i], gameObjects[i]);
-        }
-    }
+        bool allColumnsCorrect = true;
 
-    private bool CheckAllPositions()
-    {
-        bool allPositionsCorrect = true;
-
-        foreach (Vector3 position in positions)
+        foreach (var pair in columnAngles)
         {
-            if (positionGameObjectMap.ContainsKey(position))
+            Column column = pair.Key;
+            float targetAngle = pair.Value;
+
+            if (!IsColumnAtCorrectAngle(column, targetAngle))
             {
-                GameObject gameObjectAtPosition = positionGameObjectMap[position];
-                if (gameObjectAtPosition.transform.position != position)
-                {
-                    allPositionsCorrect = false;
-                    break;
-                }
+                allColumnsCorrect = false;
+                break;
             }
         }
 
-        return allPositionsCorrect;
-    }
-
-    public void RiddleIsSolved()
-    {
-        if(CheckAllPositions())
+        if (allColumnsCorrect)
         {
             gameObject.SetActive(false);
         }
+    }
+
+    bool IsColumnAtCorrectAngle(Column column, float targetAngle)
+    {
+        float angleThreshold = 1f;
+
+        return Mathf.Abs(column.transform.eulerAngles.z - targetAngle) < angleThreshold;
     }
 }

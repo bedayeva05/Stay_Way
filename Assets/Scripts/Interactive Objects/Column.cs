@@ -5,7 +5,8 @@ using UnityEngine;
 public class Column : MonoBehaviour
 {
     public float rotationSpeed = 30f;
-    public float targetRotationAngle = 90f;
+    private float _targetRotationAngle = 90f;
+    private float _startRotationAngle;
 
     private bool isRotating = false;
     private float currentRotationAngle = 0f;
@@ -15,15 +16,20 @@ public class Column : MonoBehaviour
         if (isRotating)
         {
             float rotationStep = rotationSpeed * Time.deltaTime;
+            if (currentRotationAngle + rotationStep > _targetRotationAngle)
+            {
+                rotationStep = _targetRotationAngle - currentRotationAngle;
+                currentRotationAngle = _targetRotationAngle; 
+            }
+            else
+            {
+                currentRotationAngle += rotationStep;
+            }
 
             transform.Rotate(Vector3.back, rotationStep);
 
-            currentRotationAngle += rotationStep;
-
-            if (currentRotationAngle >= targetRotationAngle)
+            if (currentRotationAngle >= _targetRotationAngle)
             {
-                //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, targetRotationAngle, transform.rotation.eulerAngles.z);
-
                 isRotating = false;
                 currentRotationAngle = 0f;
             }
@@ -32,6 +38,7 @@ public class Column : MonoBehaviour
 
     public void StartRotation()
     {
+        _startRotationAngle = transform.rotation.eulerAngles.z;
         isRotating = true;
     }
 }
