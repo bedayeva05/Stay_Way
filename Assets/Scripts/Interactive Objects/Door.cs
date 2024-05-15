@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     private Quaternion initialRotation;
     private Quaternion openRotation;
     private Quaternion closeRotation;
-    private BoxCollider collider;
+    private new BoxCollider collider;
     void Start()
     {
         initialRotation = transform.rotation;

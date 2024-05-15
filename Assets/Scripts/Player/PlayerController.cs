@@ -39,9 +39,12 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        MovementFixedUpdate();
-        JumpFixedUpdate();
-        if (shouldTeleport)
+        if (!shouldTeleport)
+        {
+            MovementFixedUpdate();
+            JumpFixedUpdate();
+        }
+        else
         {
             transform.position = teleportTarget;
             shouldTeleport = false;
@@ -137,7 +140,7 @@ public class PlayerController : MonoBehaviour
     }
     public void TriggerTeleport(Transform target)
     {
-        teleportTarget = target.position;
+        teleportTarget = target;
         shouldTeleport = true; 
     }
 }

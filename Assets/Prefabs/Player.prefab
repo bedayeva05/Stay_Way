@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5482096136734571048}
   - component: {fileID: 5482096136734571049}
   - component: {fileID: 8001255327840229238}
+  - component: {fileID: 8903389534406538167}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9.8
-  jumpforce: 7
+  jumpforce: 3
   walkingSpeed: 3
   runningSpeed: 7
   maxStamina: 100
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5482096136734571041}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d48b5796bed765c4cb783e685fca39bf, type: 3}
   m_Name: 
@@ -180,6 +181,32 @@ MonoBehaviour:
   audio: {fileID: 0}
   prefab: {fileID: 0}
   maxDistanceToPrefab: 0
+--- !u!114 &8903389534406538167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5482096136734571041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229ef7adfb2ab324daadb7f04547374b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstCrack: 0
+  FirstMapPiece: 0
+  WholeMap: 0
+  EmptyBook: 0
+  BookPapers: 0
+  WholeBook: 0
+  StatuesRiddle: 0
+  KeyIsTaken: 0
+  DoorIsOpened: 0
+  Candles: 0
+  Mirror: 0
+  Cross: 0
+  Chalk: 0
+  RitualIsReady: 0
 --- !u!1 &5482096136773399409
 GameObject:
   m_ObjectHideFlags: 0
