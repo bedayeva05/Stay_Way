@@ -648,6 +648,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 815930447}
     m_Modifications:
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1425137574}
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5295076070854725499, guid: 9268635319f52914782dff88f43c58e9,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -732,6 +747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonRotatingStatues (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895345856332099879, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895345856332099879, guid: 9268635319f52914782dff88f43c58e9,
         type: 3}
@@ -2224,6 +2244,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 815930447}
     m_Modifications:
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 262173687}
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8895345856332099873, guid: 9268635319f52914782dff88f43c58e9,
         type: 3}
       propertyPath: m_RootOrder
@@ -2298,6 +2333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonRotatingStatues (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895345856332099879, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895345856332099879, guid: 9268635319f52914782dff88f43c58e9,
         type: 3}
@@ -4948,6 +4988,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 815930447}
     m_Modifications:
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 184623335}
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8895345856332099873, guid: 9268635319f52914782dff88f43c58e9,
         type: 3}
       propertyPath: m_RootOrder
@@ -5022,6 +5077,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonRotatingStatues (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895345856332099879, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895345856332099879, guid: 9268635319f52914782dff88f43c58e9,
         type: 3}
@@ -9263,39 +9323,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1776541078}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1783387723
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/DarkBringerRefined_1_2
-  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BayerTex:
-        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Lut2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors: []
 --- !u!1001 &1838125349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10106,6 +10133,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 815930447}
     m_Modifications:
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 52793088}
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342261802398393544, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8895345856332099873, guid: 9268635319f52914782dff88f43c58e9,
         type: 3}
       propertyPath: m_RootOrder
@@ -10180,6 +10222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonRotatingStatues (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895345856332099879, guid: 9268635319f52914782dff88f43c58e9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895345856332099879, guid: 9268635319f52914782dff88f43c58e9,
         type: 3}

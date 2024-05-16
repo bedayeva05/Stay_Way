@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLevelController : MonoBehaviour
+public class PlayerUIController : MonoBehaviour
 {
     public int currentLevelIndex;
     public string[] levelNames = {
