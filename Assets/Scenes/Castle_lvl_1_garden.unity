@@ -2349,7 +2349,8 @@ PrefabInstance:
       propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartRotation
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8895345856332099879, guid: 9268635319f52914782dff88f43c58e9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9268635319f52914782dff88f43c58e9, type: 3}
 --- !u!4 &416044716 stripped
 Transform:

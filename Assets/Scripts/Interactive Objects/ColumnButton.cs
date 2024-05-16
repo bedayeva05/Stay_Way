@@ -11,7 +11,7 @@ public class ColumnButton : MonoBehaviour
     private const KeyCode ButtonToPress = KeyCode.F;
 
     private bool _playerIsNearby;
-
+    private bool _playerHasNeededLevel = false;
     private Transform _playerTransform;
 
     private void Update()
@@ -23,11 +23,14 @@ public class ColumnButton : MonoBehaviour
     {
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
-        action?.Invoke();
+        if (!_playerHasNeededLevel)
+        { 
+            action?.Invoke(); 
+        }
     }
     private void UpdateButtonIconRotation()
     {
-        if (_playerTransform != null)
+        if (_playerTransform != null && _playerHasNeededLevel)
         {
             Vector3 directionToPlayer = _playerTransform.position - buttonIcon.transform.position;
             directionToPlayer.y = 0;
@@ -37,17 +40,23 @@ public class ColumnButton : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
-        //if (!other.gameObject.GetComponent<PlayerProgress>().WholeBook) return;
-        _playerIsNearby = true;
-        _playerTransform = other.transform;
-        buttonIcon.SetActive(true);
+        _playerHasNeededLevel = other.GetComponent<PlayerProgress>().WholeBook;
+        if (_playerHasNeededLevel)
+        {
+            _playerIsNearby = true;
+            _playerTransform = other.transform;
+            buttonIcon.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
-        _playerIsNearby = false;
-        _playerTransform = null;
-        buttonIcon.SetActive(false);
+        if (_playerHasNeededLevel)
+        {
+            _playerIsNearby = false;
+            _playerTransform = null;
+            buttonIcon.SetActive(false);
+        }
     }
 }
