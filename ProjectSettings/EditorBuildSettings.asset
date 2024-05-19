@@ -14,16 +14,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 96edd7f4b05548c459a6bc2941aace3d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Castle_lvl_0.unity
     guid: 37ec1ccb6789d1e44b879b00e8f61c76
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Castle_lvl_1.unity
     guid: fec17427dffe6d94d8e7c7ea67b560d0
-  - enabled: 0
-    path: Assets/Scenes/Castle_lvl_1_garden.unity
-    guid: 5a3c619d0e116b04da42110122b12aa6
   - enabled: 1
     path: Assets/Scenes/Castle_lvl_2.unity
     guid: cf8397c437b270946ac52cacd36e4a81
+  - enabled: 1
+    path: Assets/Scenes/Castle_lvl_3.unity
+    guid: b8808595f83d52d40b19abe6f068e075
+  - enabled: 1
+    path: Assets/Scenes/Castle_lvl_1_garden.unity
+    guid: 5a3c619d0e116b04da42110122b12aa6
   m_configObjects: {}
