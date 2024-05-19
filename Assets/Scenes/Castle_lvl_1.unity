@@ -586,6 +586,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 59787416}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &94542641
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/DarkBringerRefined_1_2
+  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BayerTex:
+        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Lut2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1001 &97838694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3523,7 +3556,7 @@ PrefabInstance:
     - target: {fileID: -7834725476103226327, guid: 002d27b079d27604abd4b77e8e983fab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.231
+      value: 2.263
       objectReference: {fileID: 0}
     - target: {fileID: -7377385338288389855, guid: 002d27b079d27604abd4b77e8e983fab,
         type: 3}
