@@ -8,23 +8,18 @@ public class CameraRotation : MonoBehaviour
 
     public float minAngle;
     public float maxAngle;
-    public GameObject floorsMenu;
 
     public float RotationSpeed;
     // Start is called before the first frame update
     void Start()
     {
-   
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
-    {
-		if (!floorsMenu.active)
-		{
-			Cursor.lockState = CursorLockMode.Locked;
-			Cursor.visible = false;
-		}
+    {		
 		var newAngleY = transform.localEulerAngles.y + Time.deltaTime * RotationSpeed * Input.GetAxis("Mouse X");
         transform.localEulerAngles = new Vector3(0, newAngleY, 0);
 
@@ -35,7 +30,5 @@ public class CameraRotation : MonoBehaviour
         newAngleX = Mathf.Clamp(newAngleX, minAngle, maxAngle);
 
         CameraAxisTransform.localEulerAngles = new Vector3(newAngleX, 0, 0);
-
-
     }
 }

@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c88a551f76c3b4b89006bce47926ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chooseMenuUI: {fileID: 2962903968099646570}
 --- !u!114 &4010304024190970791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,7 +780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1050,7 +1051,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5678776359815384197}
-        m_MethodName: Telport
+        m_MethodName: Teleport
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1072,7 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c255404604374974c91209660a001f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneIndex: 4
+  targetSceneIndex: 3
 --- !u!1 &3860246453371390661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,6 +1204,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1493238440060012280}
+        m_MethodName: PlayerControlFreeze
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5390428925651074942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1336,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 577568888127084530}
-        m_MethodName: Telport
+        m_MethodName: Teleport
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1346,7 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c255404604374974c91209660a001f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneIndex: 2
+  targetSceneIndex: 4
 --- !u!1 &5440637556123687278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,7 +1496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1633,7 +1645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.06169897, b: 0.2735849, a: 0.70980394}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1844,7 +1856,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 874072131950391985}
-        m_MethodName: Telport
+        m_MethodName: Teleport
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1866,7 +1878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c255404604374974c91209660a001f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneIndex: 3
+  targetSceneIndex: 5
 --- !u!1 &8906497012893325652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,7 +2000,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2204241289831279039}
-        m_MethodName: Telport
+        m_MethodName: Teleport
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2010,7 +2022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c255404604374974c91209660a001f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneIndex: 0
+  targetSceneIndex: 1
 --- !u!1 &9037362082280879711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2144,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8096463944758611460}
-        m_MethodName: Telport
+        m_MethodName: Teleport
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2154,4 +2166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c255404604374974c91209660a001f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneIndex: 1
+  targetSceneIndex: 2

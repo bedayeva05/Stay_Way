@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -142,5 +143,12 @@ public class PlayerController : MonoBehaviour
     {
         teleportTarget = target.position;
         shouldTeleport = true; 
+    }
+    private void MenuUpdate()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

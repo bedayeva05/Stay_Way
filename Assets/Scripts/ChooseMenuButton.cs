@@ -5,8 +5,12 @@ using UnityEngine;
 public class ChooseMenuButton : MonoBehaviour
 {
     public int targetSceneIndex;
-    public void Telport(int targetTeleportPointIndex)
+    public void Teleport(int targetTeleportPointIndex)
     {
+        InteractiveMode playerUI = GetComponentInParent<InteractiveMode>();
+        //InteractiveMode playerUI = GetComponent<InteractiveMode>();
+        playerUI.PlayerControlFreeze();
+        playerUI.DisableChooseMenuUI();
         TeleportManager.Instance.TeleportPlayer(targetSceneIndex, targetTeleportPointIndex);
     }
 }

@@ -32,34 +32,16 @@ public class TeleportManager : MonoBehaviour
         yield return new WaitUntil(() => SceneManager.GetActiveScene().buildIndex == sceneIndex);
 
         PlayerController playerController = FindObjectOfType<PlayerController>();
-        /*if (playerController != null)
-        {
-            playerController.enabled = false;
-        }*/
+        InteractiveMode playerUI = FindObjectOfType<InteractiveMode>();
 
         TargetPoints targetPoints = FindObjectOfType<TargetPoints>();
         List<Transform> targetPointsObjects = targetPoints.GetTargetPoints();
-        //Debug.Log(targetPointsObjects[0].transform.position);
         if (targetPointsObjects != null)
         {
             playerController.TriggerTeleport(targetPointsObjects[teleportPointIndex].transform);
-            /*Vector3 targetPosition = targetPointsObjects[teleportPointIndex].transform.position;
-            Debug.Log("Teleporting to target position: " + targetPosition);
-
-            PlayerController player = FindObjectOfType<PlayerController>();
-            player.transform.position = targetPosition;
-            Debug.Log("Player teleported to: " + player.transform.position);*/
-
-            /*CharacterController player = FindObjectOfType<CharacterController>();
-            PlayerController playerController = player.GetComponent<PlayerController>();
-            playerController.enabled = false;
-            player.transform.position = targetPointsObjects[teleportPointIndex].transform.position;
-            //player.enabled = true;
-            Debug.Log(55555);*/
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            playerUI.DisableChooseMenuUI();
         }
-        /*if (playerController != null)
-        {
-            playerController.enabled = true;
-        }*/
     }
 }

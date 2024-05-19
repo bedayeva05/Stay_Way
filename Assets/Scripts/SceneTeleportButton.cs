@@ -7,19 +7,12 @@ public class SceneTeleportButton : MonoBehaviour
 {
     public UnityEvent action;
     public GameObject buttonIcon;
-
-    public int targetSceneIndex;
-    public int targetTeleportPointIndex;
-
-
+    
     private const KeyCode ButtonToPress = KeyCode.F;
-
     private bool _playerIsNearby;
 
     private Transform _playerTransform;
     private GameObject _player;
-
-    private GameObject _chooseMenuUI;
 
     private void Update()
     {
@@ -32,9 +25,9 @@ public class SceneTeleportButton : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         _player.GetComponent<InteractiveMode>().PlayerControlFreeze();
-        EnableUI();
-        //TeleportManager.Instance.TeleportPlayer(targetSceneIndex, targetTeleportPointIndex);
-        //StartCoroutine(LoadAndTeleport(targetSceneIndex, targetTeleportPointIndex));
+        _player.GetComponent<InteractiveMode>().EnableChooseMenuUI();
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     private void UpdateButtonIconRotation()
@@ -53,7 +46,6 @@ public class SceneTeleportButton : MonoBehaviour
         _player = other.gameObject;
         _playerIsNearby = true;
         _playerTransform = other.transform;
-        _chooseMenuUI = _player.transform.Find("UI").GetChild(0).gameObject;
         buttonIcon.SetActive(true);
     }
 
@@ -63,12 +55,5 @@ public class SceneTeleportButton : MonoBehaviour
         _playerIsNearby = false;
         _playerTransform = null;
         buttonIcon.SetActive(false);
-    }
-    private void EnableUI()
-    {
-        if (_chooseMenuUI != null)
-        {
-            _chooseMenuUI.SetActive(true);
-        }
     }
 }
