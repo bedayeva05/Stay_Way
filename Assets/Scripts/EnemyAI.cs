@@ -40,7 +40,7 @@ public class EnemyAI : MonoBehaviour
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
                 // Placeholder for attack logic
-                Debug.Log("Attacking player");
+                //Debug.Log("Attacking player");
             }
         }
     }
@@ -81,7 +81,7 @@ public class EnemyAI : MonoBehaviour
             // Sphere cast to detect the player with a broader range
             float sphereRadius = 0.5f; // Adjust based on player size
             Vector3 sphereCastOrigin = transform.position + Vector3.up * 1.0f; // Sphere cast origin height
-            Debug.DrawRay(sphereCastOrigin, direction, Color.green); // Visualize the sphere cast in the Scene view
+            //Debug.DrawRay(sphereCastOrigin, direction, Color.green); // Visualize the sphere cast in the Scene view
 
             if (Physics.SphereCast(sphereCastOrigin, sphereRadius, direction, out hit, rayDistance))
             {
@@ -104,7 +104,7 @@ public class EnemyAI : MonoBehaviour
                 if (door != null)
                 {
                     door.ToggleDoor();
-                    Debug.Log("Opening door");
+                    //Debug.Log("Opening door");
                     break; // Open the first detected door and break out of the loop
                 }
             }
