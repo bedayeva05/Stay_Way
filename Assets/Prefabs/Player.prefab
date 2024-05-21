@@ -172,7 +172,6 @@ GameObject:
   - component: {fileID: 1493238440060012282}
   - component: {fileID: 1493238440060012281}
   - component: {fileID: 1493238440060012280}
-  - component: {fileID: 4010304024190970791}
   - component: {fileID: 2531705292461035366}
   - component: {fileID: 1493238440060012287}
   - component: {fileID: 1354525294829088152}
@@ -326,21 +325,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chooseMenuUI: {fileID: 2962903968099646570}
---- !u!114 &4010304024190970791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493238440060012272}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d48b5796bed765c4cb783e685fca39bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 0}
-  prefab: {fileID: 0}
-  maxDistanceToPrefab: 0
 --- !u!114 &2531705292461035366
 MonoBehaviour:
   m_ObjectHideFlags: 0
