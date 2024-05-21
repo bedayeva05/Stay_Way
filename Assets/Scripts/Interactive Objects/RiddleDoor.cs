@@ -26,6 +26,7 @@ public class RiddleDoor : MonoBehaviour
 
         if (allColumnsCorrect)
         {
+            FindObjectOfType<PlayerProgress>().SetStatuesRiddle(true);
             gameObject.SetActive(false);
         }
     }

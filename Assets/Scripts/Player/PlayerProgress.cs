@@ -19,6 +19,8 @@ public class PlayerProgress : MonoBehaviour
     public bool Chalk = false;
     public bool RitualIsReady = false;
 
+
+
     private void Start()
     {
         LoadProgress();
@@ -27,7 +29,7 @@ public class PlayerProgress : MonoBehaviour
     public void SaveProgress()
     {
         PlayerPrefs.SetInt("FirstCrack", FirstCrack ? 1 : 0);
-        PlayerPrefs.SetInt("FirstMapPiece", FirstMapPiece ? 1 : 0);
+        //PlayerPrefs.SetInt("FirstMapPiece", FirstMapPiece ? 1 : 0);
         PlayerPrefs.SetInt("WholeMap", WholeMap ? 1 : 0);
         PlayerPrefs.SetInt("EmptyBook", EmptyBook ? 1 : 0);
         PlayerPrefs.SetInt("BookPapers", BookPapers ? 1 : 0);
@@ -46,7 +48,7 @@ public class PlayerProgress : MonoBehaviour
     public void LoadProgress()
     {
         FirstCrack = PlayerPrefs.GetInt("FirstCrack", 0) == 1;
-        FirstMapPiece = PlayerPrefs.GetInt("FirstMapPiece", 0) == 1;
+        //FirstMapPiece = PlayerPrefs.GetInt("FirstMapPiece", 0) == 1;
         WholeMap = PlayerPrefs.GetInt("WholeMap", 0) == 1;
         EmptyBook = PlayerPrefs.GetInt("EmptyBook", 0) == 1;
         BookPapers = PlayerPrefs.GetInt("BookPapers", 0) == 1;
@@ -67,11 +69,11 @@ public class PlayerProgress : MonoBehaviour
         SaveProgress();
     }
 
-    public void SetFirstMapPiece(bool value)
+    /*public void SetFirstMapPiece(bool value)
     {
         FirstMapPiece = value;
         SaveProgress();
-    }
+    }*/
 
     public void SetWholeMap(bool value)
     {
@@ -119,30 +121,34 @@ public class PlayerProgress : MonoBehaviour
     public void SetCandles(bool value)
     {
         Candles = value;
+        RitualIsReady = Candles && Mirror && Cross && Chalk;
         SaveProgress();
     }
 
     public void SetMirror(bool value)
     {
         Mirror = value;
+        RitualIsReady = Candles && Mirror && Cross && Chalk;
         SaveProgress();
     }
 
     public void SetCross(bool value)
     {
         Cross = value;
+        RitualIsReady = Candles && Mirror && Cross && Chalk;
         SaveProgress();
     }
 
     public void SetChalk(bool value)
     {
         Chalk = value;
+        RitualIsReady = Candles && Mirror && Cross && Chalk;
         SaveProgress();
     }
 
-    public void SetRitualIsReady(bool value)
+    /*public void SetRitualIsReady(bool value)
     {
         RitualIsReady = value;
         SaveProgress();
-    }
+    }*/
 }

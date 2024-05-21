@@ -3914,39 +3914,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 435700612}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &437478619
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/DarkBringerRefined_1_2
-  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BayerTex:
-        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Lut2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors: []
 --- !u!1001 &478414707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4116,6 +4083,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24efba9d5bf5c8649b0980f9fbeddfee, type: 3}
+--- !u!114 &478414708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2531705292461035366, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
+    type: 3}
+  m_PrefabInstance: {fileID: 478414707}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229ef7adfb2ab324daadb7f04547374b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &509501137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15386,6 +15365,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2016946506}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &2033576227
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/DarkBringerRefined_1_2
+  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BayerTex:
+        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Lut2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1001 &2048209415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18640,7 +18652,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 478414708}
+        m_MethodName: SetFirstCrack
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   buttonIcon: {fileID: 6333706887984078132}
   targetSceneIndex: 2
   targetTeleportPointIndex: 1
