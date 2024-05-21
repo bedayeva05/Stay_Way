@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerProgress : MonoBehaviour
 {
     public bool FirstCrack = false;
-    public bool FirstMapPiece = false;
+    //public bool FirstMapPiece = false;
     public bool WholeMap = false;
     public bool EmptyBook = false;
     public bool BookPapers = false;

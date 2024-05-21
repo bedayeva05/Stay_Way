@@ -354,7 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirstCrack: 0
-  FirstMapPiece: 0
   WholeMap: 0
   EmptyBook: 0
   BookPapers: 0
@@ -2291,7 +2290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8e57d40a12e139148a6d7bafadbf461d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 933b39c35123cc14688fcdfdf20a1aa7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
