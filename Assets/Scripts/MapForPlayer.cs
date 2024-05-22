@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapOpener : MonoBehaviour
+public class MapForPlayer : MonoBehaviour
 {
     public GameObject firstMap;
     public GameObject wholeMap;

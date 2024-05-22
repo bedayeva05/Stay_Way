@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 1493238440060012280}
   - component: {fileID: 2531705292461035366}
   - component: {fileID: 1493238440060012287}
-  - component: {fileID: 8548261268823902999}
+  - component: {fileID: 5571448185459566983}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4728e440bb7f47c4893b1e7b5dbdea4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8548261268823902999
+--- !u!114 &5571448185459566983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1493238440060012272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e411ac42bc64c2449a6df39be984e353, type: 3}
+  m_Script: {fileID: 11500000, guid: e54e8e2934d5ad748bd5379ce4a1f669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firstMap: {fileID: 8951978760600894494}
@@ -1763,7 +1763,6 @@ GameObject:
   - component: {fileID: 6438703761627004403}
   - component: {fileID: 6775079692028902539}
   - component: {fileID: 1151433880126542634}
-  - component: {fileID: 3287774057808122651}
   m_Layer: 5
   m_Name: choose_menu
   m_TagString: Untagged
@@ -1859,19 +1858,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3287774057808122651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6931575445786392948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be8b918ba1b80db43923baa890f5c625, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1493238440060012272}
 --- !u!1 &8035798419661579741
 GameObject:
   m_ObjectHideFlags: 0
