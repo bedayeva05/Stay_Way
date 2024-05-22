@@ -19,11 +19,27 @@ public class PlayerProgress : MonoBehaviour
     public bool Chalk = false;
     public bool RitualIsReady = false;
 
-
+    public void ResetAllPlayerPrefs()
+    {
+        WholeMap = false;
+        EmptyBook = false;
+        WholeBook = false;
+        StatuesRiddle = false;
+        KeyIsTaken = false;
+        DoorIsOpened = false;
+        Candles = false;
+        Mirror = false;
+        Cross = false;
+        Chalk = false;
+        RitualIsReady = false;
+        SaveProgress();
+}
 
     private void Start()
     {
         LoadProgress();
+
+        //SetWholeBook();
     }
 
     public void SaveProgress()
