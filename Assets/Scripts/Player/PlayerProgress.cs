@@ -19,6 +19,16 @@ public class PlayerProgress : MonoBehaviour
     public bool Chalk = false;
     public bool RitualIsReady = false;
 
+    public GameObject EscapeUI;
+    public GameObject RoomExamineUI;
+    //public bool BookPapers = false;
+    public GameObject FindEmptyBookUI;
+    public GameObject FindWholeBookUI;
+    public GameObject GardenUI;
+    public GameObject OpenDoorUI;
+    public GameObject FindRitualObjectsUI;
+    public GameObject MakeRitualUI;
+
     public void ResetAllPlayerPrefs()
     {
         WholeMap = false;
@@ -38,8 +48,6 @@ public class PlayerProgress : MonoBehaviour
     private void Start()
     {
         LoadProgress();
-
-        //SetWholeBook();
     }
 
     public void SaveProgress()
@@ -97,7 +105,6 @@ public class PlayerProgress : MonoBehaviour
         SaveProgress();
     }
 
-    // Add similar methods for other boolean values as needed
     public void SetEmptyBook()
     {
         EmptyBook = true;
