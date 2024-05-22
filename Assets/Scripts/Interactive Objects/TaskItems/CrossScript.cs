@@ -27,7 +27,7 @@ public class CrossScript : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
-        _playerProgress.SetCross(true);
+        _playerProgress.SetCross();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }

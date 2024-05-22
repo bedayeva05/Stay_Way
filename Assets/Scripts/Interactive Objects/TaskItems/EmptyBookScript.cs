@@ -27,7 +27,7 @@ public class EmptyBookScript : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
-        _playerProgress.SetEmptyBook(true);
+        _playerProgress.SetEmptyBook();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }

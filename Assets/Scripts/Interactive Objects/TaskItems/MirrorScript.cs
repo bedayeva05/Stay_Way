@@ -27,7 +27,7 @@ public class MirrorScript : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
-        _playerProgress.SetMirror(true);
+        _playerProgress.SetMirror();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }

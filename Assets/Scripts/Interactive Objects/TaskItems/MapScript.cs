@@ -27,7 +27,7 @@ public class MapScript : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
-        _playerProgress.SetWholeMap(true);
+        _playerProgress.SetWholeMap();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }
@@ -43,13 +43,10 @@ public class MapScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
-        if (other.gameObject.GetComponent<PlayerProgress>().FirstCrack)
-        {
-            _playerIsNearby = true;
-            _playerTransform = other.transform;
-            _playerProgress = other.GetComponent<PlayerProgress>();
-            buttonIcon.SetActive(true);
-        }
+        _playerIsNearby = true;
+        _playerTransform = other.transform;
+        _playerProgress = other.GetComponent<PlayerProgress>();
+        buttonIcon.SetActive(true);
     }
     /*private void OnTriggerEnter(Collider other)
     {

@@ -27,7 +27,7 @@ public class ChalkScript : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
-        _playerProgress.SetChalk(true);
+        _playerProgress.SetChalk();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }

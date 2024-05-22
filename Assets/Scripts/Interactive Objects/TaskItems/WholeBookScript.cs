@@ -26,7 +26,7 @@ public class WholeBookScript : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
-        _playerProgress.SetWholeBook(true);
+        _playerProgress.SetWholeBook();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }
@@ -42,7 +42,7 @@ public class WholeBookScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
-        if (other.gameObject.GetComponent<PlayerProgress>().BookPapers)
+        if (other.gameObject.GetComponent<PlayerProgress>().EmptyBook)
         {
             _playerIsNearby = true;
             _playerTransform = other.transform;

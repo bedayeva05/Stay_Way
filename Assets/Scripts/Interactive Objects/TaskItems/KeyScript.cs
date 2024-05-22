@@ -27,7 +27,7 @@ public class KeyScript : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
-        _playerProgress.SetKeyIsTaken(true);
+        _playerProgress.SetKeyIsTaken();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }

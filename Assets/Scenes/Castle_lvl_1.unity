@@ -1576,12 +1576,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 201271619}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &209590194 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8906497012893325652, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
-    type: 3}
-  m_PrefabInstance: {fileID: 1894164723}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &235959596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b9c097667d59f674f9a0864401c23020,
@@ -2487,12 +2481,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5093686155939260905, guid: 3fb7902bcec40e245a38df7131422b55,
     type: 3}
   m_PrefabInstance: {fileID: 275493542}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &282471816 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2962903968099646570, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
-    type: 3}
-  m_PrefabInstance: {fileID: 1894164723}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &290673087
 PrefabInstance:
@@ -15172,39 +15160,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03e61d1a73fca2a4882b292d65669fa8, type: 3}
---- !u!21 &1774339110
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/DarkBringerRefined_1_2
-  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BayerTex:
-        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Lut2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors: []
 --- !u!1001 &1777791135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15612,6 +15567,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 742022736}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1836961830
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/DarkBringerRefined_1_2
+  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BayerTex:
+        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Lut2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!4 &1867907513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2639463694760334197, guid: 0df5aabd5df47d543a206a23af82b78e,
@@ -15968,7 +15956,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 282471816}
+      objectReference: {fileID: 0}
     - target: {fileID: 637436010439451894, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -15988,6 +15976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493238440060012272, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1493238440060012283, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
@@ -16053,12 +16046,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 282471816}
+      objectReference: {fileID: 0}
     - target: {fileID: 5044375800615326317, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 209590194}
+      objectReference: {fileID: 0}
     - target: {fileID: 5044375800615326317, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState

@@ -36,12 +36,13 @@ public class TeleportManager : MonoBehaviour
 
         TargetPoints targetPoints = FindObjectOfType<TargetPoints>();
         List<Transform> targetPointsObjects = targetPoints.GetTargetPoints();
-        if (targetPointsObjects != null)
+        if (targetPointsObjects != null && playerController != null)
         {
             playerController.TriggerTeleport(targetPointsObjects[teleportPointIndex].transform);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             playerUI.DisableChooseMenuUI();
+            playerController.gameObject.GetComponent<PlayerProgress>().LoadProgress();
         }
     }
 }

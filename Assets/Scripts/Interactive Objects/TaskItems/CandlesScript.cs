@@ -26,7 +26,7 @@ public class CandlesScript : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
-        _playerProgress.SetCandles(true);
+        _playerProgress.SetCandles();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }

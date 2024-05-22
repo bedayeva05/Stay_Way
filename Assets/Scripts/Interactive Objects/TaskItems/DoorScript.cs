@@ -27,7 +27,7 @@ public class DoorScript : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
-        _playerProgress.SetDoorIsOpened(true);
+        _playerProgress.SetDoorIsOpened();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }
