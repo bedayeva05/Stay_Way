@@ -23,7 +23,7 @@ public class Door : MonoBehaviour
     {
         collider.enabled = false;
         isOpen = !isOpen;
-        //enabled = true;
+        enabled = true;
     }
     void Update()
     {
@@ -32,15 +32,8 @@ public class Door : MonoBehaviour
         if (Quaternion.Angle(transform.rotation, targetRotation) < 0.01f)
         {
             transform.rotation = targetRotation;
-            //enabled = false;
-            if(isOpen)
-            {
-                collider.enabled = false;
-            }
-            else
-            {
-                collider.enabled = true;
-            }
+            enabled = false;
+            collider.enabled = true;
         }
     }
 }
