@@ -352,11 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 229ef7adfb2ab324daadb7f04547374b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstCrack: 0
-  FirstMapPiece: 0
   WholeMap: 0
   EmptyBook: 0
-  BookPapers: 0
   WholeBook: 0
   StatuesRiddle: 0
   KeyIsTaken: 0
@@ -366,6 +363,14 @@ MonoBehaviour:
   Cross: 0
   Chalk: 0
   RitualIsReady: 0
+  EscapeUI: {fileID: 0}
+  RoomExamineUI: {fileID: 0}
+  FindEmptyBookUI: {fileID: 0}
+  FindWholeBookUI: {fileID: 0}
+  GardenUI: {fileID: 0}
+  OpenDoorUI: {fileID: 0}
+  FindRitualObjectsUI: {fileID: 0}
+  MakeRitualUI: {fileID: 0}
 --- !u!114 &1493238440060012287
 MonoBehaviour:
   m_ObjectHideFlags: 0
