@@ -4,36 +4,40 @@ using UnityEngine;
 
 public class RiddleDoor : MonoBehaviour
 {
-    public List<Column> columns = new List<Column>();
-    public List<float> angles = new List<float>();
-    private Dictionary<Column, float> columnAngles = new Dictionary<Column, float>();
+    [System.Serializable]
+    public class Column
+    {
+        public Transform columnTransform;
+        public float correctAngle;
+    }
+    public Column[] columns;
+    public float angleTolerance = 1.0f; // Tolerance for angle comparison
 
     void Update()
     {
-        bool allColumnsCorrect = true;
-
-        foreach (var pair in columnAngles)
+        if (CheckAllColumns())
         {
-            Column column = pair.Key;
-            float targetAngle = pair.Value;
-
-            if (!IsColumnAtCorrectAngle(column, targetAngle))
-            {
-                allColumnsCorrect = false;
-                break;
-            }
-        }
-
-        if (allColumnsCorrect)
-        {
+            PlayerProgress playerProgress = FindObjectOfType<PlayerProgress>();
+            playerProgress.SetStatuesRiddle();
             gameObject.SetActive(false);
         }
     }
 
-    bool IsColumnAtCorrectAngle(Column column, float targetAngle)
+    bool CheckAllColumns()
     {
-        float angleThreshold = 1f;
+        foreach (Column col in columns)
+        {
+            float currentAngle = col.columnTransform.localEulerAngles.y;
+            float deltaAngle = Mathf.DeltaAngle(currentAngle, col.correctAngle);
 
-        return Mathf.Abs(column.transform.eulerAngles.z - targetAngle) < angleThreshold;
+            //Debug.Log($"Column: {col.columnTransform.name}, Current Angle: {currentAngle}, Correct Angle: {col.correctAngle}, Delta Angle: {deltaAngle}");
+
+            if (Mathf.Abs(deltaAngle) > angleTolerance)
+            {
+                return false;
+            }
+        }
+        return true;
     }
+
 }
