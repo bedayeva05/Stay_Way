@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
-public class CollectableItem : MonoBehaviour
+public class MapScript : MonoBehaviour
 {
     public UnityEvent action;
     public bool destroyAfterCollected = true;
-
     public GameObject buttonIcon;
 
     private const KeyCode ButtonToPress = KeyCode.F;
@@ -13,6 +14,7 @@ public class CollectableItem : MonoBehaviour
     private bool _playerIsNearby;
 
     private Transform _playerTransform;
+    private PlayerProgress _playerProgress;
 
     private void Update()
     {
@@ -24,6 +26,7 @@ public class CollectableItem : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
+        _playerProgress.SetWholeMap();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }
@@ -41,8 +44,19 @@ public class CollectableItem : MonoBehaviour
         if (!other.gameObject.GetComponent<PlayerController>()) return;
         _playerIsNearby = true;
         _playerTransform = other.transform;
+        _playerProgress = other.GetComponent<PlayerProgress>();
         buttonIcon.SetActive(true);
     }
+    /*private void OnTriggerEnter(Collider other)
+    {
+        var controller = other.GetComponent<PlayerController>();
+        if (!controller) return;
+
+        action.Invoke();
+
+        if (!destroyAfterCollected) return;
+        Destroy(gameObject);
+    }*/
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
@@ -50,4 +64,5 @@ public class CollectableItem : MonoBehaviour
         _playerTransform = null;
         buttonIcon.SetActive(false);
     }
+
 }

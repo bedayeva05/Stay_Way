@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TeleportPlayer : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject _player;
 
     public void TeleportTo(Transform newPosition)
     {
-        if (player != null)
+        if (_player != null)
         {
-            player.GetComponent<PlayerController>().TriggerTeleport(newPosition);
+            _player.GetComponent<PlayerController>().TriggerTeleport(newPosition);
         }
     }
 }

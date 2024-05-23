@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerProgress : MonoBehaviour
 {
-    public bool FirstCrack = false;
-    public bool FirstMapPiece = false;
+    //public bool FirstCrack = false;
+    //public bool FirstMapPiece = false;
     public bool WholeMap = false;
     public bool EmptyBook = false;
-    public bool BookPapers = false;
+    //public bool BookPapers = false;
     public bool WholeBook = false;
     public bool StatuesRiddle = false;
     public bool KeyIsTaken = false;
@@ -19,6 +19,33 @@ public class PlayerProgress : MonoBehaviour
     public bool Chalk = false;
     public bool RitualIsReady = false;
 
+    public GameObject EscapeUI;
+    public GameObject RoomExamineUI;
+    //public bool BookPapers = false;
+    public GameObject FindEmptyBookUI;
+    public GameObject FindWholeBookUI;
+    public GameObject GardenUI;
+    public GameObject OpenDoorUI;
+    public GameObject FindRitualObjectsUI;
+    public GameObject MakeRitualUI;
+
+    public void ResetAllPlayerPrefs()
+    {
+        WholeMap = false;
+        EmptyBook = false;
+        WholeBook = false;
+        StatuesRiddle = false;
+        KeyIsTaken = false;
+        DoorIsOpened = false;
+        Candles = false;
+        Mirror = false;
+        Cross = false;
+        Chalk = false;
+        RitualIsReady = false;
+        SaveProgress();
+
+}
+
     private void Start()
     {
         LoadProgress();
@@ -26,11 +53,11 @@ public class PlayerProgress : MonoBehaviour
 
     public void SaveProgress()
     {
-        PlayerPrefs.SetInt("FirstCrack", FirstCrack ? 1 : 0);
-        PlayerPrefs.SetInt("FirstMapPiece", FirstMapPiece ? 1 : 0);
+        //PlayerPrefs.SetInt("FirstCrack", FirstCrack ? 1 : 0);
+        //PlayerPrefs.SetInt("FirstMapPiece", FirstMapPiece ? 1 : 0);
         PlayerPrefs.SetInt("WholeMap", WholeMap ? 1 : 0);
         PlayerPrefs.SetInt("EmptyBook", EmptyBook ? 1 : 0);
-        PlayerPrefs.SetInt("BookPapers", BookPapers ? 1 : 0);
+        //PlayerPrefs.SetInt("BookPapers", BookPapers ? 1 : 0);
         PlayerPrefs.SetInt("WholeBook", WholeBook ? 1 : 0);
         PlayerPrefs.SetInt("StatuesRiddle", StatuesRiddle ? 1 : 0);
         PlayerPrefs.SetInt("KeyIsTaken", KeyIsTaken ? 1 : 0);
@@ -45,11 +72,11 @@ public class PlayerProgress : MonoBehaviour
 
     public void LoadProgress()
     {
-        FirstCrack = PlayerPrefs.GetInt("FirstCrack", 0) == 1;
-        FirstMapPiece = PlayerPrefs.GetInt("FirstMapPiece", 0) == 1;
+        //FirstCrack = PlayerPrefs.GetInt("FirstCrack", 0) == 1;
+        //FirstMapPiece = PlayerPrefs.GetInt("FirstMapPiece", 0) == 1;
         WholeMap = PlayerPrefs.GetInt("WholeMap", 0) == 1;
         EmptyBook = PlayerPrefs.GetInt("EmptyBook", 0) == 1;
-        BookPapers = PlayerPrefs.GetInt("BookPapers", 0) == 1;
+        //BookPapers = PlayerPrefs.GetInt("BookPapers", 0) == 1;
         WholeBook = PlayerPrefs.GetInt("WholeBook", 0) == 1;
         StatuesRiddle = PlayerPrefs.GetInt("StatuesRiddle", 0) == 1;
         KeyIsTaken = PlayerPrefs.GetInt("KeyIsTaken", 0) == 1;
@@ -61,9 +88,9 @@ public class PlayerProgress : MonoBehaviour
         RitualIsReady = PlayerPrefs.GetInt("RitualIsReady", 0) == 1;
     }
 
-    public void SetFirstCrack(bool value)
+    /*public void SetFirstCrack()
     {
-        FirstCrack = value;
+        FirstCrack = true;
         SaveProgress();
     }
 
@@ -71,78 +98,81 @@ public class PlayerProgress : MonoBehaviour
     {
         FirstMapPiece = value;
         SaveProgress();
-    }
+    }*/
 
-    public void SetWholeMap(bool value)
+    public void SetWholeMap()
     {
-        WholeMap = value;
+        WholeMap = true;
         SaveProgress();
     }
 
-    // Add similar methods for other boolean values as needed
-    public void SetEmptyBook(bool value)
+    public void SetEmptyBook()
     {
-        EmptyBook = value;
+        EmptyBook = true;
         SaveProgress();
     }
 
-    public void SetBookPapers(bool value)
+    /*public void SetBookPapers()
     {
-        BookPapers = value;
+        BookPapers = true;
+        SaveProgress();
+    }*/
+
+    public void SetWholeBook()
+    {
+        WholeBook = true;
         SaveProgress();
     }
 
-    public void SetWholeBook(bool value)
+    public void SetStatuesRiddle()
     {
-        WholeBook = value;
+        StatuesRiddle = true;
         SaveProgress();
     }
 
-    public void SetStatuesRiddle(bool value)
+    public void SetKeyIsTaken()
     {
-        StatuesRiddle = value;
+        KeyIsTaken = true;
         SaveProgress();
     }
 
-    public void SetKeyIsTaken(bool value)
+    public void SetDoorIsOpened()
     {
-        KeyIsTaken = value;
+        DoorIsOpened = true;
         SaveProgress();
     }
 
-    public void SetDoorIsOpened(bool value)
+    public void SetCandles()
     {
-        DoorIsOpened = value;
+        Candles = true;
+        RitualIsReady = Candles && Mirror && Cross && Chalk;
         SaveProgress();
     }
 
-    public void SetCandles(bool value)
+    public void SetMirror()
     {
-        Candles = value;
+        Mirror = true;
+        RitualIsReady = Candles && Mirror && Cross && Chalk;
         SaveProgress();
     }
 
-    public void SetMirror(bool value)
+    public void SetCross()
     {
-        Mirror = value;
+        Cross = true;
+        RitualIsReady = Candles && Mirror && Cross && Chalk;
         SaveProgress();
     }
 
-    public void SetCross(bool value)
+    public void SetChalk()
     {
-        Cross = value;
+        Chalk = true;
+        RitualIsReady = Candles && Mirror && Cross && Chalk;
         SaveProgress();
     }
 
-    public void SetChalk(bool value)
-    {
-        Chalk = value;
-        SaveProgress();
-    }
-
-    public void SetRitualIsReady(bool value)
+    /*public void SetRitualIsReady(bool value)
     {
         RitualIsReady = value;
         SaveProgress();
-    }
+    }*/
 }

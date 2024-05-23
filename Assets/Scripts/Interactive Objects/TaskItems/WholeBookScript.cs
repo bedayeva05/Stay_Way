@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
-public class CollectableItem : MonoBehaviour
+public class WholeBookScript : MonoBehaviour
 {
     public UnityEvent action;
     public bool destroyAfterCollected = true;
-
     public GameObject buttonIcon;
 
     private const KeyCode ButtonToPress = KeyCode.F;
@@ -13,6 +14,7 @@ public class CollectableItem : MonoBehaviour
     private bool _playerIsNearby;
 
     private Transform _playerTransform;
+    private PlayerProgress _playerProgress;
 
     private void Update()
     {
@@ -24,6 +26,7 @@ public class CollectableItem : MonoBehaviour
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
+        _playerProgress.SetWholeBook();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }
@@ -39,9 +42,13 @@ public class CollectableItem : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
-        _playerIsNearby = true;
-        _playerTransform = other.transform;
-        buttonIcon.SetActive(true);
+        if (other.gameObject.GetComponent<PlayerProgress>().EmptyBook)
+        {
+            _playerIsNearby = true;
+            _playerTransform = other.transform;
+            _playerProgress = other.GetComponent<PlayerProgress>();
+            buttonIcon.SetActive(true);
+        }
     }
     private void OnTriggerExit(Collider other)
     {

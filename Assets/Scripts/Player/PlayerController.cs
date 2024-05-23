@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         StaminaUpdate();
         MovementUpdate();
         JumpUpdate();
+        //MenuUpdate();
     }
     void FixedUpdate()
     {
