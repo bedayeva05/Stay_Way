@@ -218,25 +218,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1522076155725952427, guid: 5394026f4684859479d4692383ff140a,
+        type: 3}
+      propertyPath: patrolPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1522076155725952427, guid: 5394026f4684859479d4692383ff140a,
+        type: 3}
+      propertyPath: patrolPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1371219918}
     - target: {fileID: 2567004670591683915, guid: 5394026f4684859479d4692383ff140a,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2567004670591683915, guid: 5394026f4684859479d4692383ff140a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 170
-      objectReference: {fileID: 0}
-    - target: {fileID: 2567004670591683915, guid: 5394026f4684859479d4692383ff140a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 170
-      objectReference: {fileID: 0}
-    - target: {fileID: 2567004670591683915, guid: 5394026f4684859479d4692383ff140a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 2567004670591683915, guid: 5394026f4684859479d4692383ff140a,
         type: 3}
@@ -295,51 +290,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5394026f4684859479d4692383ff140a, type: 3}
---- !u!1 &22424572 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2941982543317211121, guid: 5394026f4684859479d4692383ff140a,
-    type: 3}
-  m_PrefabInstance: {fileID: 22424571}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &22424573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22424572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229e4f4016fc19c4b82dc20c24ac3595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolPoints:
-  - {fileID: 1371219918}
-  viewAngle: 180
-  damage: 30
-  doorDetectionRange: 1
---- !u!195 &22424574
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22424572}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3
-  m_Acceleration: 2
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &29782179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4890,6 +4840,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8f08eb565c8ff0418dca37bc6cbfd5e, type: 3}
+--- !u!21 &553548578
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/DarkBringerRefined_1_2
+  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BayerTex:
+        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Lut2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1001 &555929347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15488,39 +15471,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1789854281}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1805011346
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/DarkBringerRefined_1_2
-  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BayerTex:
-        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Lut2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors: []
 --- !u!4 &1818916934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446959650372635958, guid: 79dbeeef5b32e134c9669d299842238c,
@@ -19809,11 +19759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c2dac37ba3f7d43adc8b2696b2e100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action:
-    m_PersistentCalls:
-      m_Calls: []
-  destroyAfterCollected: 1
-  buttonIcon: {fileID: 3856660407884383853}
 --- !u!222 &2018169074581804037
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22188,11 +22133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0d6d61a343cad46a49749b066a548e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action:
-    m_PersistentCalls:
-      m_Calls: []
-  destroyAfterCollected: 1
-  buttonIcon: {fileID: 5337551403873371272}
 --- !u!114 &7257429267886981449
 MonoBehaviour:
   m_ObjectHideFlags: 0

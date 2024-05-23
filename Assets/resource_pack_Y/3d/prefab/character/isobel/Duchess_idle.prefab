@@ -502,6 +502,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2567004670591683915}
+  - component: {fileID: 1522076155725952427}
+  - component: {fileID: 22424574}
   m_Layer: 0
   m_Name: Duchess_idle
   m_TagString: Untagged
@@ -518,7 +520,7 @@ Transform:
   m_GameObject: {fileID: 2941982543317211121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.516, y: 3.925, z: -15.7418}
-  m_LocalScale: {x: 95, y: 95, z: 95}
+  m_LocalScale: {x: 170, y: 170, z: 170}
   m_Children:
   - {fileID: 8056807693398879711}
   - {fileID: 4362375428317757875}
@@ -527,6 +529,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522076155725952427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2941982543317211121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb1f71c9a3de194eb6efc209e1a1afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolPoints: []
+  viewAngle: 100
+  damage: 30
+  doorDetectionRange: 1
+--- !u!195 &22424574
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2941982543317211121}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.001
+  m_Speed: 3
+  m_Acceleration: 2
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 0.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3103099734235247786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7457673656660503681}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2567004670591683915}
