@@ -23,7 +23,7 @@ public class ColumnButton : MonoBehaviour
     {
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
-        if (!_playerHasNeededLevel)
+        if (_playerHasNeededLevel)
         { 
             action?.Invoke(); 
         }

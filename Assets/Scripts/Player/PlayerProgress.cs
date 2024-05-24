@@ -56,7 +56,17 @@ public class PlayerProgress : MonoBehaviour
     {
         LoadProgress();
     }
-
+    public void ResetUI()
+    {
+        EscapeUI.SetActive(false);
+        FindEmptyBookUI.SetActive(false);
+        FindWholeBookUI.SetActive(false);
+        GardenUI.SetActive(false);
+        OpenDoorUI.SetActive(false);
+        RoomExamineUI.SetActive(false);
+        FindRitualObjectsUI.SetActive(false);
+        MakeRitualUI.SetActive(false);
+    }
     public void SaveProgress()
     {
         PlayerPrefs.SetInt("FirstCrack", FirstCrack ? 1 : 0);
@@ -95,7 +105,7 @@ public class PlayerProgress : MonoBehaviour
     }
     public void SetFirstCrack()
     {
-        EscapeUI.SetActive(false);
+        ResetUI();
         FindEmptyBookUI.SetActive(true);
         FirstCrack = true;
         SaveProgress();
@@ -108,14 +118,14 @@ public class PlayerProgress : MonoBehaviour
 
     public void SetEmptyBook()
     {
-        FindEmptyBookUI.SetActive(false);
+        ResetUI();
         FindWholeBookUI.SetActive(true);
         EmptyBook = true;
         SaveProgress();
     }
     public void SetWholeBook()
     {
-        FindWholeBookUI.SetActive(false);
+        ResetUI();
         GardenUI.SetActive(true);
         WholeBook = true;
         SaveProgress();
@@ -129,7 +139,7 @@ public class PlayerProgress : MonoBehaviour
 
     public void SetKeyIsTaken()
     {
-        GardenUI.SetActive(false);
+        ResetUI();
         OpenDoorUI.SetActive(true);
         KeyIsTaken = true;
         SaveProgress();
@@ -137,7 +147,7 @@ public class PlayerProgress : MonoBehaviour
 
     public void SetDoorIsOpened()
     {
-        OpenDoorUI.SetActive(false);
+        ResetUI();
         RoomExamineUI.SetActive(true);
         DoorIsOpened = true;
         SaveProgress();
@@ -152,7 +162,7 @@ public class PlayerProgress : MonoBehaviour
         RitualIsReady = Candles && Mirror && Cross && Chalk;
         if(RitualIsReady)
         {
-            FindRitualObjectsUI.SetActive(false);
+            ResetUI();
             MakeRitualUI.SetActive(true);
         }
         SaveProgress();
@@ -164,7 +174,7 @@ public class PlayerProgress : MonoBehaviour
         RitualIsReady = Candles && Mirror && Cross && Chalk;
         if (RitualIsReady)
         {
-            FindRitualObjectsUI.SetActive(false);
+            ResetUI();
             MakeRitualUI.SetActive(true);
         }
         SaveProgress();
@@ -176,7 +186,7 @@ public class PlayerProgress : MonoBehaviour
         RitualIsReady = Candles && Mirror && Cross && Chalk;
         if (RitualIsReady)
         {
-            FindRitualObjectsUI.SetActive(false);
+            ResetUI();
             MakeRitualUI.SetActive(true);
         }
         SaveProgress();
@@ -188,7 +198,7 @@ public class PlayerProgress : MonoBehaviour
         RitualIsReady = Candles && Mirror && Cross && Chalk;
         if (RitualIsReady)
         {
-            FindRitualObjectsUI.SetActive(false);
+            ResetUI();
             MakeRitualUI.SetActive(true);
         }
         SaveProgress();
