@@ -1316,6 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 229ef7adfb2ab324daadb7f04547374b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FirstCrack: 0
   WholeMap: 0
   EmptyBook: 0
   WholeBook: 0

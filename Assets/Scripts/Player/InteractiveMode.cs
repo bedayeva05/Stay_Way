@@ -70,7 +70,15 @@ public class InteractiveMode : MonoBehaviour
     {
         PlayerControlFreeze();
         itemGetUI.SetActive(true);
-    }
+        crossUI.SetActive(false);
+        bookUI.SetActive(false);
+        sheetsUI.SetActive(false);
+        candlesUI.SetActive(false);
+        chalkUI.SetActive(false);
+        mirrorUI.SetActive(false);
+        keyUI.SetActive(false);
+        mapUI.SetActive(false);
+}
     public void EnableChooseMenuUI()
     {
         chooseMenuUI.SetActive(true);

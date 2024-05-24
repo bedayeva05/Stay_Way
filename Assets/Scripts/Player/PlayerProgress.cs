@@ -30,6 +30,7 @@ public class PlayerProgress : MonoBehaviour
 
     public void ResetAllPlayerPrefs()
     {
+        FirstCrack = false;
         WholeMap = false;
         EmptyBook = false;
         WholeBook = false;
