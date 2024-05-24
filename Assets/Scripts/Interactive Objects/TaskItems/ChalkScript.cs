@@ -16,6 +16,7 @@ public class ChalkScript : MonoBehaviour
 
     private Transform _playerTransform;
     private PlayerProgress _playerProgress;
+    private InteractiveMode _playerUI;
 
     private void Update()
     {
@@ -28,6 +29,7 @@ public class ChalkScript : MonoBehaviour
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
         _playerProgress.SetChalk();
+        _playerUI.ChalkCollected();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }
@@ -48,6 +50,7 @@ public class ChalkScript : MonoBehaviour
             _playerIsNearby = true;
             _playerTransform = other.transform;
             _playerProgress = other.GetComponent<PlayerProgress>();
+            _playerUI = other.GetComponent<InteractiveMode>();
             buttonIcon.SetActive(true);
         }
     }

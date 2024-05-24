@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerProgress : MonoBehaviour
 {
-    //public bool FirstCrack = false;
+    public bool FirstCrack = false;
     //public bool FirstMapPiece = false;
     public bool WholeMap = false;
     public bool EmptyBook = false;
@@ -20,12 +20,11 @@ public class PlayerProgress : MonoBehaviour
     public bool RitualIsReady = false;
 
     public GameObject EscapeUI;
-    public GameObject RoomExamineUI;
-    //public bool BookPapers = false;
     public GameObject FindEmptyBookUI;
     public GameObject FindWholeBookUI;
     public GameObject GardenUI;
     public GameObject OpenDoorUI;
+    public GameObject RoomExamineUI;
     public GameObject FindRitualObjectsUI;
     public GameObject MakeRitualUI;
 
@@ -42,6 +41,14 @@ public class PlayerProgress : MonoBehaviour
         Cross = false;
         Chalk = false;
         RitualIsReady = false;
+        EscapeUI.SetActive(true);
+        FindEmptyBookUI.SetActive(false);
+        FindWholeBookUI.SetActive(false);
+        GardenUI.SetActive(false);
+        OpenDoorUI.SetActive(false);
+        RoomExamineUI.SetActive(false);
+        FindRitualObjectsUI.SetActive(false);
+        MakeRitualUI.SetActive(false);
         SaveProgress();
     }
     private void Start()
@@ -51,7 +58,7 @@ public class PlayerProgress : MonoBehaviour
 
     public void SaveProgress()
     {
-        //PlayerPrefs.SetInt("FirstCrack", FirstCrack ? 1 : 0);
+        PlayerPrefs.SetInt("FirstCrack", FirstCrack ? 1 : 0);
         //PlayerPrefs.SetInt("FirstMapPiece", FirstMapPiece ? 1 : 0);
         PlayerPrefs.SetInt("WholeMap", WholeMap ? 1 : 0);
         PlayerPrefs.SetInt("EmptyBook", EmptyBook ? 1 : 0);
@@ -70,7 +77,7 @@ public class PlayerProgress : MonoBehaviour
 
     public void LoadProgress()
     {
-        //FirstCrack = PlayerPrefs.GetInt("FirstCrack", 0) == 1;
+        FirstCrack = PlayerPrefs.GetInt("FirstCrack", 0) == 1;
         //FirstMapPiece = PlayerPrefs.GetInt("FirstMapPiece", 0) == 1;
         WholeMap = PlayerPrefs.GetInt("WholeMap", 0) == 1;
         EmptyBook = PlayerPrefs.GetInt("EmptyBook", 0) == 1;
@@ -85,19 +92,13 @@ public class PlayerProgress : MonoBehaviour
         Chalk = PlayerPrefs.GetInt("Chalk", 0) == 1;
         RitualIsReady = PlayerPrefs.GetInt("RitualIsReady", 0) == 1;
     }
-
-    /*public void SetFirstCrack()
+    public void SetFirstCrack()
     {
+        EscapeUI.SetActive(false);
+        FindEmptyBookUI.SetActive(true);
         FirstCrack = true;
         SaveProgress();
     }
-
-    public void SetFirstMapPiece(bool value)
-    {
-        FirstMapPiece = value;
-        SaveProgress();
-    }*/
-
     public void SetWholeMap()
     {
         WholeMap = true;
@@ -106,18 +107,15 @@ public class PlayerProgress : MonoBehaviour
 
     public void SetEmptyBook()
     {
+        FindEmptyBookUI.SetActive(false);
+        FindWholeBookUI.SetActive(true);
         EmptyBook = true;
         SaveProgress();
     }
-
-    /*public void SetBookPapers()
-    {
-        BookPapers = true;
-        SaveProgress();
-    }*/
-
     public void SetWholeBook()
     {
+        FindWholeBookUI.SetActive(false);
+        GardenUI.SetActive(true);
         WholeBook = true;
         SaveProgress();
     }
@@ -130,20 +128,32 @@ public class PlayerProgress : MonoBehaviour
 
     public void SetKeyIsTaken()
     {
+        GardenUI.SetActive(false);
+        OpenDoorUI.SetActive(true);
         KeyIsTaken = true;
         SaveProgress();
     }
 
     public void SetDoorIsOpened()
     {
+        OpenDoorUI.SetActive(false);
+        RoomExamineUI.SetActive(true);
         DoorIsOpened = true;
         SaveProgress();
     }
 
+    /// НАДО ДОБАВИТЬ ТРИГГЕР ВХОДА В КОМНАТУ
+    //RoomExamineUI.SetActive(false);
+    //FindRitualObjectsUI.SetActive(true);
     public void SetCandles()
     {
         Candles = true;
         RitualIsReady = Candles && Mirror && Cross && Chalk;
+        if(RitualIsReady)
+        {
+            FindRitualObjectsUI.SetActive(false);
+            MakeRitualUI.SetActive(true);
+        }
         SaveProgress();
     }
 
@@ -151,6 +161,11 @@ public class PlayerProgress : MonoBehaviour
     {
         Mirror = true;
         RitualIsReady = Candles && Mirror && Cross && Chalk;
+        if (RitualIsReady)
+        {
+            FindRitualObjectsUI.SetActive(false);
+            MakeRitualUI.SetActive(true);
+        }
         SaveProgress();
     }
 
@@ -158,6 +173,11 @@ public class PlayerProgress : MonoBehaviour
     {
         Cross = true;
         RitualIsReady = Candles && Mirror && Cross && Chalk;
+        if (RitualIsReady)
+        {
+            FindRitualObjectsUI.SetActive(false);
+            MakeRitualUI.SetActive(true);
+        }
         SaveProgress();
     }
 
@@ -165,6 +185,11 @@ public class PlayerProgress : MonoBehaviour
     {
         Chalk = true;
         RitualIsReady = Candles && Mirror && Cross && Chalk;
+        if (RitualIsReady)
+        {
+            FindRitualObjectsUI.SetActive(false);
+            MakeRitualUI.SetActive(true);
+        }
         SaveProgress();
     }
 

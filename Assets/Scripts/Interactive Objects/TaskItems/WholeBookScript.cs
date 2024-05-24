@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class WholeBookScript : MonoBehaviour
 {
-    public UnityEvent action;
+    /*public UnityEvent action;
     public bool destroyAfterCollected = true;
 
     public GameObject buttonIcon;
@@ -15,6 +15,7 @@ public class WholeBookScript : MonoBehaviour
 
     private Transform _playerTransform;
     private PlayerProgress _playerProgress;
+    private InteractiveMode _playerUI;
 
     private void Update()
     {
@@ -27,6 +28,7 @@ public class WholeBookScript : MonoBehaviour
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
         _playerProgress.SetWholeBook();
+        _playerUI.SheetsCollected
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }
@@ -47,24 +49,15 @@ public class WholeBookScript : MonoBehaviour
             _playerIsNearby = true;
             _playerTransform = other.transform;
             _playerProgress = other.GetComponent<PlayerProgress>();
+            _playerUI = other.GetComponent<InteractiveMode>();
             buttonIcon.SetActive(true);
         }
     }
-    /*private void OnTriggerEnter(Collider other)
-    {
-        var controller = other.GetComponent<PlayerController>();
-        if (!controller) return;
-
-        action.Invoke();
-        
-        if (!destroyAfterCollected) return;
-        Destroy(gameObject);
-    }*/
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
         _playerIsNearby = false;
         _playerTransform = null;
         buttonIcon.SetActive(false);
-    }
+    }*/
 }

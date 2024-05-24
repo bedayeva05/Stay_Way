@@ -15,6 +15,7 @@ public class CandlesScript : MonoBehaviour
 
     private Transform _playerTransform;
     private PlayerProgress _playerProgress;
+    private InteractiveMode _playerUI;
 
     private void Update()
     {
@@ -27,6 +28,7 @@ public class CandlesScript : MonoBehaviour
         if (!Input.GetKeyDown(ButtonToPress)) return;
         action?.Invoke();
         _playerProgress.SetCandles();
+        _playerUI.CandlesCollected();
         if (!destroyAfterCollected) return;
         Destroy(gameObject);
     }
@@ -47,6 +49,7 @@ public class CandlesScript : MonoBehaviour
             _playerIsNearby = true;
             _playerTransform = other.transform;
             _playerProgress = other.GetComponent<PlayerProgress>();
+            _playerUI = other.GetComponent<InteractiveMode>();
             buttonIcon.SetActive(true);
         }
     }
