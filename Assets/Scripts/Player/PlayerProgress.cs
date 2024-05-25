@@ -56,7 +56,6 @@ public class PlayerProgress : MonoBehaviour
     }
     private void Start()
     {
-        SetDoorIsOpened();
         LoadProgress();
     }
     public void ResetUI()
