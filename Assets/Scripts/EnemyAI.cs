@@ -29,7 +29,7 @@ public class EnemyAI : MonoBehaviour
         PatrolUpdate();
         DoorInteractionUpdate();
 
-        if(_navMeshAgent.speed == 0)
+        if(_navMeshAgent.speed > 0)
         {
             animator.SetBool("Walk", true);
 		}
@@ -151,10 +151,11 @@ public class EnemyAI : MonoBehaviour
             {
                 if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
                 {
+                    animator.SetBool("Walk", false);
                     PickNewPatrolPoint();
                     timer = timeToChangePoint;
-                } 
-			}
+                }
+            }
             
         }
     }
