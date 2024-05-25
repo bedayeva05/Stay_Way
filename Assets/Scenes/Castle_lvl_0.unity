@@ -2503,7 +2503,7 @@ PrefabInstance:
     - target: {fileID: 1493238440060012272, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1493238440060012283, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
@@ -2518,7 +2518,7 @@ PrefabInstance:
     - target: {fileID: 1493238440060012283, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.868971
+      value: -18.219
       objectReference: {fileID: 0}
     - target: {fileID: 1493238440060012283, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
@@ -4035,7 +4035,7 @@ PrefabInstance:
     - target: {fileID: 1493238440060012272, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493238440060012278, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
@@ -19268,8 +19268,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6765938919934375339}
   - component: {fileID: 6765938919934375338}
-  - component: {fileID: 6765938919934375341}
   - component: {fileID: 6765938919934375337}
+  - component: {fileID: 6765938919934375340}
   m_Layer: 0
   m_Name: VentTeleport
   m_TagString: Untagged
@@ -19286,9 +19286,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 6765938919934375336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2471530336934334bb94ff663d4eeb07, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d5c17d9eafb5d249b9e181f7ee4c7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6765938919934375340}
+        m_MethodName: TeleportTo
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5038510192410181125}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttonIcon: {fileID: 8357275229674569399}
 --- !u!135 &6765938919934375338
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19317,7 +19332,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6765938919934375341
+--- !u!114 &6765938919934375340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19326,24 +19341,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6765938919934375336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5c17d9eafb5d249b9e181f7ee4c7b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 2471530336934334bb94ff663d4eeb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6765938919934375337}
-        m_MethodName: TeleportTo
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 5038510192410181125}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  buttonIcon: {fileID: 8357275229674569399}
 --- !u!1 &6849716271059297803
 GameObject:
   m_ObjectHideFlags: 0
