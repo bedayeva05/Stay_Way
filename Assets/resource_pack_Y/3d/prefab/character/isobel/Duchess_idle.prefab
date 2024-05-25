@@ -503,8 +503,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2567004670591683915}
   - component: {fileID: 1336591926}
-  - component: {fileID: 1336591927}
   - component: {fileID: 1336591929}
+  - component: {fileID: 7324599568393363263}
   m_Layer: 0
   m_Name: Duchess_idle
   m_TagString: Untagged
@@ -556,28 +556,7 @@ MonoBehaviour:
   viewAngle: 100
   damage: 30
   doorDetectionRange: 1
---- !u!195 &1336591927
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2941982543317211121}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.002
-  m_Speed: 3.5
-  m_Acceleration: 5
-  avoidancePriority: 50
-  m_AngularSpeed: 80
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.00875
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  timeToChangePoint: 10
 --- !u!82 &1336591929
 AudioSource:
   m_ObjectHideFlags: 0
@@ -674,6 +653,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!195 &7324599568393363263
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2941982543317211121}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3
+  m_Acceleration: 2
+  avoidancePriority: 50
+  m_AngularSpeed: 25
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3103099734235247786
 GameObject:
   m_ObjectHideFlags: 0

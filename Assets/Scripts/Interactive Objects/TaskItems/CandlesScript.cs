@@ -16,8 +16,18 @@ public class CandlesScript : MonoBehaviour
     private Transform _playerTransform;
     private PlayerProgress _playerProgress;
     private InteractiveMode _playerUI;
+	private OutlineController outline;
 
-    private void Update()
+	private void Start()
+	{
+		outline = GetComponent<OutlineController>();
+		_playerProgress = FindObjectOfType<PlayerProgress>();
+		if (_playerProgress.DoorIsOpened)
+		{
+			outline.SetBool(true);
+		}
+	}
+	private void Update()
     {
         UpdatePressButton();
         UpdateButtonIconRotation();
@@ -51,18 +61,8 @@ public class CandlesScript : MonoBehaviour
             _playerProgress = other.GetComponent<PlayerProgress>();
             _playerUI = other.GetComponent<InteractiveMode>();
             buttonIcon.SetActive(true);
-        }
+		}
     }
-    /*private void OnTriggerEnter(Collider other)
-    {
-        var controller = other.GetComponent<PlayerController>();
-        if (!controller) return;
-
-        action.Invoke();
-        
-        if (!destroyAfterCollected) return;
-        Destroy(gameObject);
-    }*/
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;

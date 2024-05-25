@@ -6,7 +6,7 @@ using UnityEngine;
 public class OutlineController : MonoBehaviour
 {  
     public Outline outline;
-	private bool lightSwitch;
+	public bool lightSwitch;
 
 	private void Start()
 	{

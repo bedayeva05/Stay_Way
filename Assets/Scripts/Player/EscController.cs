@@ -7,7 +7,7 @@ public class EscController : MonoBehaviour
 	private bool pressed = false;
 	private void Update()
 	{
-		if (Input.GetKey(KeyCode.Escape))
+		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			pressed = !pressed;
 		}

@@ -28,11 +28,10 @@ public class CrossScript : MonoBehaviour
     {
         UpdatePressButton();
         UpdateButtonIconRotation();
-        if (_playerProgress.DoorIsOpened)
-        {
+		if (_playerProgress.DoorIsOpened)
+		{
 			outline.SetBool(true);
 		}
-        
 	}
     private void UpdatePressButton()
     {
