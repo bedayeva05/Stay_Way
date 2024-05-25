@@ -61,6 +61,7 @@ public class PlayerProgress : MonoBehaviour
     public void ResetUI()
     {
         EscapeUI.SetActive(false);
+        FindMapUI.SetActive(false);
         FindEmptyBookUI.SetActive(false);
         FindWholeBookUI.SetActive(false);
         GardenUI.SetActive(false);

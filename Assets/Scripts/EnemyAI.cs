@@ -13,13 +13,13 @@ public class EnemyAI : MonoBehaviour
     public float doorDetectionRange = 1f;
     public float timeToChangePoint;
     public Animator animator;
+
     void Start()
     {
 		timer = timeToChangePoint;
 		InitComponentLinks();
         PickNewPatrolPoint();
     }
-
     void Update()
     {
 		_player = FindObjectOfType<PlayerController>();
@@ -38,12 +38,10 @@ public class EnemyAI : MonoBehaviour
             animator.SetBool("Walk", false);
         }
     }
-
     private void InitComponentLinks()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
     }
-
     private void AttackUpdate()
     {
         if (_isPlayerNoticed)
@@ -55,7 +53,6 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
-
     private void NoticePlayerUpdate()
     {
         Vector3 direction = _player.transform.position - transform.position;
@@ -122,20 +119,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-
-    private void PickNewPatrolPoint()
-    {
-        _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;
-    }
-
-    private void ChaseUpdate()
-    {
-        if (_isPlayerNoticed)
-        {
-            _navMeshAgent.destination = _player.transform.position;
-        }
-    }
-
 	private float timer;
 	private void PatrolUpdate()
     {
@@ -159,5 +142,16 @@ public class EnemyAI : MonoBehaviour
             
         }
     }
+    private void PickNewPatrolPoint()
+    {
+        _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;
+    }
 
+    private void ChaseUpdate()
+    {
+        if (_isPlayerNoticed)
+        {
+            _navMeshAgent.destination = _player.transform.position;
+        }
+    }
 }
