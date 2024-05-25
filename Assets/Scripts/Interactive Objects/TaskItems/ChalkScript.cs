@@ -10,6 +10,7 @@ public class ChalkScript : MonoBehaviour
     public bool destroyAfterCollected = true;
 
     public GameObject buttonIcon;
+    public ChestCap chest;
 
     private const KeyCode ButtonToPress = KeyCode.F;
 
@@ -28,6 +29,7 @@ public class ChalkScript : MonoBehaviour
     {
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
+        chest.OpenChest();
         action?.Invoke();
         _playerProgress.SetChalk();
         _playerUI.ChalkCollected();

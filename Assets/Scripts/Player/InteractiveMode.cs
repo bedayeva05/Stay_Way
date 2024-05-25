@@ -26,6 +26,11 @@ public class InteractiveMode : MonoBehaviour
         GetComponent<PlayerController>().enabled = !GetComponent<PlayerController>().enabled;
         GetComponent<CameraRotation>().enabled = !GetComponent<CameraRotation>().enabled;
     }
+    public void HideCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     public void CrossCollected()
     {
         ItemGetUI();
