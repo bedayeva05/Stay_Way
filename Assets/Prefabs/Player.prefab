@@ -1265,7 +1265,7 @@ MonoBehaviour:
   CameraAxisTransform: {fileID: 1493238440296042407}
   minAngle: -20
   maxAngle: 45
-  RotationSpeed: 500
+  RotationSpeed: 200
 --- !u!114 &1493238440060012280
 MonoBehaviour:
   m_ObjectHideFlags: 0
