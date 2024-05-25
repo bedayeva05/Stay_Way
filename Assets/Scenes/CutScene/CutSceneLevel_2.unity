@@ -4092,16 +4092,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2962903968099646570, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6301073572029148305, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7112399437837293866, guid: 24efba9d5bf5c8649b0980f9fbeddfee,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -6880,39 +6870,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 898966022}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &908462577
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/DarkBringerRefined_1_2
-  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BayerTex:
-        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Lut2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors: []
 --- !u!1001 &920084193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11775,6 +11732,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1481283464}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1499035157
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/DarkBringerRefined_1_2
+  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BayerTex:
+        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Lut2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1001 &1553590165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18144,7 +18134,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   buttonIcon: {fileID: 1638858721996959880}
-  targetSceneIndex: 3
+  targetSceneIndex: 2
   targetTeleportPointIndex: 3
 --- !u!4 &4080284628461304724
 Transform:
@@ -20278,7 +20268,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   buttonIcon: {fileID: 6223322012124413661}
-  targetSceneIndex: 3
+  targetSceneIndex: 2
   targetTeleportPointIndex: 2
 --- !u!114 &8691139715562834857
 MonoBehaviour:
@@ -20426,7 +20416,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   buttonIcon: {fileID: 6333706887984078132}
-  targetSceneIndex: 3
+  targetSceneIndex: 2
   targetTeleportPointIndex: 1
 --- !u!114 &8737127399576279285
 MonoBehaviour:
@@ -20534,7 +20524,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   buttonIcon: {fileID: 6333706887984078132}
-  targetSceneIndex: 3
+  targetSceneIndex: 2
   targetTeleportPointIndex: 1
 --- !u!1 &8832598294234498819
 GameObject:

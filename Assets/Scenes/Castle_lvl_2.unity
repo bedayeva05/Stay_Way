@@ -31886,7 +31886,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   buttonIcon: {fileID: 2228660727537490213}
-  targetSceneIndex: 2
+  targetSceneIndex: 3
   targetTeleportPointIndex: 4
 --- !u!114 &3479189939417226468
 MonoBehaviour:
@@ -34284,7 +34284,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   buttonIcon: {fileID: 6257027685229882103}
-  targetSceneIndex: 3
+  targetSceneIndex: 4
   targetTeleportPointIndex: 1
 --- !u!1001 &8663116200838872433
 PrefabInstance:
