@@ -55,10 +55,10 @@ public class PlayerProgress : MonoBehaviour
     }
     private void Start()
     {
-        SetCross();
+        /*SetCross();
         SetCandles();
         SetChalk();
-        SetMirror();
+        SetMirror();*/
         LoadProgress();
     }
     public void ResetUI()
