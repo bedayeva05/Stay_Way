@@ -5,6 +5,127 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public List<Transform> patrolPoints;
+    public float viewAngle = 120f;
+    public float damage = 30f;
+    public float doorDetectionRange = 1f;
+    public Animator animator;
+
+    private PlayerController _player;
+    private NavMeshAgent _navMeshAgent;
+    private bool _isPlayerNoticed;
+    private int _currentPatrolIndex;
+
+    void Start()
+    {
+        InitComponentLinks();
+        PickNewPatrolPoint();
+    }
+
+    void Update()
+    {
+        _player = FindObjectOfType<PlayerController>();
+        NoticePlayerUpdate();
+        ChaseUpdate();
+        AttackUpdate();
+        PatrolUpdate();
+        DoorInteractionUpdate();
+
+        animator.SetBool("Walk", _navMeshAgent.velocity.magnitude > 0);
+    }
+
+    private void InitComponentLinks()
+    {
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+    }
+
+    private void AttackUpdate()
+    {
+        if (_isPlayerNoticed && _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+        {
+            // Placeholder for attack logic
+            // Debug.Log("Attacking player");
+            // You can add your attack logic here, e.g., reduce player health
+        }
+    }
+
+    private void NoticePlayerUpdate()
+    {
+        Vector3 direction = _player.transform.position - transform.position;
+        _isPlayerNoticed = false;
+
+        if (Vector3.Angle(transform.forward, direction) < viewAngle / 2f)
+        {
+            float rayDistance = Vector3.Distance(transform.position, _player.transform.position);
+            Vector3[] rayOrigins = {
+                transform.position + Vector3.up * 0.1f,
+                transform.position + Vector3.up * 0.3f,
+                transform.position + Vector3.up * 0.5f
+            };
+
+            RaycastHit hit;
+            foreach (var origin in rayOrigins)
+            {
+                Debug.DrawRay(origin, direction, Color.red);
+                if (Physics.Raycast(origin, direction, out hit, rayDistance) && hit.collider.gameObject == _player.gameObject)
+                {
+                    _isPlayerNoticed = true;
+                    return;
+                }
+            }
+
+            float sphereRadius = 0.5f;
+            Vector3 sphereCastOrigin = transform.position + Vector3.up * 1.0f;
+            Debug.DrawRay(sphereCastOrigin, direction, Color.green);
+
+            if (Physics.SphereCast(sphereCastOrigin, sphereRadius, direction, out hit, rayDistance) && hit.collider.gameObject == _player.gameObject)
+            {
+                _isPlayerNoticed = true;
+            }
+        }
+    }
+
+    private void DoorInteractionUpdate()
+    {
+        if (_navMeshAgent.remainingDistance <= doorDetectionRange)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, doorDetectionRange);
+            foreach (var hitCollider in hitColliders)
+            {
+                Door door = hitCollider.GetComponent<Door>();
+                if (door != null)
+                {
+                    door.ToggleDoor();
+                    // Debug.Log("Opening door");
+                    break;
+                }
+            }
+        }
+    }
+
+    private void PatrolUpdate()
+    {
+        if (!_isPlayerNoticed && _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+        {
+            PickNewPatrolPoint();
+        }
+    }
+
+    private void PickNewPatrolPoint()
+    {
+        if (patrolPoints.Count == 0) return;
+
+        _navMeshAgent.destination = patrolPoints[_currentPatrolIndex].position;
+        _currentPatrolIndex = (_currentPatrolIndex + 1) % patrolPoints.Count;
+    }
+
+    private void ChaseUpdate()
+    {
+        if (_isPlayerNoticed)
+        {
+            _navMeshAgent.destination = _player.transform.position;
+        }
+    }
+    /*public List<Transform> patrolPoints;
     private PlayerController _player;
     public float viewAngle;
     public float damage = 30;
@@ -153,5 +274,5 @@ public class EnemyAI : MonoBehaviour
         {
             _navMeshAgent.destination = _player.transform.position;
         }
-    }
+    }*/
 }
