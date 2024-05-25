@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Castle_lvl_3.unity
     guid: b8808595f83d52d40b19abe6f068e075
+  - enabled: 1
+    path: Assets/Scenes/sub.unity
+    guid: f40353496f4b75f4db1fb59dcb03888e
   m_configObjects: {}
