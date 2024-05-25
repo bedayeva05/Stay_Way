@@ -20,6 +20,7 @@ public class PlayerProgress : MonoBehaviour
     public bool RitualIsReady = false;
 
     public GameObject EscapeUI;
+    public GameObject FindMapUI;
     public GameObject FindEmptyBookUI;
     public GameObject FindWholeBookUI;
     public GameObject GardenUI;
@@ -55,10 +56,6 @@ public class PlayerProgress : MonoBehaviour
     }
     private void Start()
     {
-        /*SetCross();
-        SetCandles();
-        SetChalk();
-        SetMirror();*/
         LoadProgress();
     }
     public void ResetUI()
@@ -111,12 +108,14 @@ public class PlayerProgress : MonoBehaviour
     public void SetFirstCrack()
     {
         ResetUI();
-        FindEmptyBookUI.SetActive(true);
+        FindMapUI.SetActive(true);
         FirstCrack = true;
         SaveProgress();
     }
     public void SetWholeMap()
     {
+        ResetUI();
+        FindEmptyBookUI.SetActive(true);
         WholeMap = true;
         SaveProgress();
     }

@@ -2,21 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class RitualScript : MonoBehaviour
+public class FirstStairs : MonoBehaviour
 {
     public UnityEvent action;
-    public bool destroyAfterCollected = true;
-
     public GameObject buttonIcon;
 
     private const KeyCode ButtonToPress = KeyCode.F;
-
     private bool _playerIsNearby;
 
     private Transform _playerTransform;
+    private GameObject _player;
     private PlayerProgress _playerProgress;
 
     private void Update()
@@ -24,17 +20,17 @@ public class RitualScript : MonoBehaviour
         UpdatePressButton();
         UpdateButtonIconRotation();
     }
+
     private void UpdatePressButton()
     {
         if (!_playerIsNearby) return;
         if (!Input.GetKeyDown(ButtonToPress)) return;
-        if (_playerProgress.RitualIsReady)
-        {
-            action?.Invoke();
-        }
-        if (!destroyAfterCollected) return;
-        Destroy(gameObject);
+        _player.GetComponent<InteractiveMode>().PlayerControlFreeze();
+        _player.GetComponent<InteractiveMode>().EnableChooseMenuUI();
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
+
     private void UpdateButtonIconRotation()
     {
         if (_playerTransform != null)
@@ -44,26 +40,25 @@ public class RitualScript : MonoBehaviour
             buttonIcon.transform.rotation = Quaternion.LookRotation(directionToPlayer) * Quaternion.Euler(0, 180, 0);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
-        if (other.gameObject.GetComponent<PlayerProgress>().DoorIsOpened)
+        _player = other.gameObject;
+        _playerProgress = other.GetComponent<PlayerProgress>();
+        if (_playerProgress.WholeMap)
         {
             _playerIsNearby = true;
             _playerTransform = other.transform;
-            _playerProgress = other.GetComponent<PlayerProgress>();
             buttonIcon.SetActive(true);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
         _playerIsNearby = false;
         _playerTransform = null;
         buttonIcon.SetActive(false);
-    }
-    public void Final()
-    {
-        SceneManager.LoadScene(7);
     }
 }
