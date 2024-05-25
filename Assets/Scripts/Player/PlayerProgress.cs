@@ -28,6 +28,7 @@ public class PlayerProgress : MonoBehaviour
     public GameObject FindRitualObjectsUI;
     public GameObject MakeRitualUI;
 
+
     public void ResetAllPlayerPrefs()
     {
         FirstCrack = false;
@@ -54,6 +55,10 @@ public class PlayerProgress : MonoBehaviour
     }
     private void Start()
     {
+        SetCross();
+        SetCandles();
+        SetChalk();
+        SetMirror();
         LoadProgress();
     }
     public void ResetUI()

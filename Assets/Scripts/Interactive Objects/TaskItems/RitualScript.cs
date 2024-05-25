@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RitualScript : MonoBehaviour
 {
@@ -69,5 +71,9 @@ public class RitualScript : MonoBehaviour
         _playerIsNearby = false;
         _playerTransform = null;
         buttonIcon.SetActive(false);
+    }
+    public void Final()
+    {
+        SceneManager.LoadScene(7);
     }
 }
