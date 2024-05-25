@@ -17,18 +17,10 @@ public class MapScript : MonoBehaviour
     private Transform _playerTransform;
     private PlayerProgress _playerProgress;
     private InteractiveMode _playerUI;
-	private OutlineController outline;
-
-	private void Start()
-	{
-		outline = GetComponent<OutlineController>();
-		_playerProgress = FindObjectOfType<PlayerProgress>();
-	}
 	private void Update()
     {
         UpdatePressButton();
         UpdateButtonIconRotation();
-        outline.SetBool(true);
 	}
     private void UpdatePressButton()
     {

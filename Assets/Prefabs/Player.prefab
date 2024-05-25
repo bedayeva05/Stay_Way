@@ -1145,7 +1145,7 @@ Transform:
   m_GameObject: {fileID: 1493238440060012272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.07, y: 1, z: 6.91}
-  m_LocalScale: {x: 0.5, y: 0.8, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.77, z: 0.5}
   m_Children:
   - {fileID: 1493238440296042407}
   - {fileID: 7904865010963930421}
@@ -1226,9 +1226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9.8
-  jumpforce: 3
-  walkingSpeed: 5
-  runningSpeed: 7
+  jumpforce: 5
+  walkingSpeed: 4
+  runningSpeed: 5
   maxStamina: 100
   staminaDepletionRate: 60
   staminaRecoveryRate: 10
@@ -1243,7 +1243,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.6
+  m_Height: 1.54
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1265,7 +1265,7 @@ MonoBehaviour:
   CameraAxisTransform: {fileID: 1493238440296042407}
   minAngle: -20
   maxAngle: 45
-  RotationSpeed: 200
+  RotationSpeed: 250
 --- !u!114 &1493238440060012280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1539,7 +1539,7 @@ Light:
   m_InnerSpotAngle: 5
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

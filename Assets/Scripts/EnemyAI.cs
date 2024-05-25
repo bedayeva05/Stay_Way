@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     private bool _isPlayerNoticed;
     public float doorDetectionRange = 1f;
     public float timeToChangePoint;
-
+    public Animator animator;
     void Start()
     {
 		timer = timeToChangePoint;
@@ -28,6 +28,15 @@ public class EnemyAI : MonoBehaviour
         AttackUpdate();
         PatrolUpdate();
         DoorInteractionUpdate();
+
+        if(_navMeshAgent.speed == 0)
+        {
+            animator.SetBool("Walk", true);
+		}
+        else
+        {
+            animator.SetBool("Walk", false);
+        }
     }
 
     private void InitComponentLinks()

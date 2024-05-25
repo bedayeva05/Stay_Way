@@ -16,17 +16,7 @@ public class CandlesScript : MonoBehaviour
     private Transform _playerTransform;
     private PlayerProgress _playerProgress;
     private InteractiveMode _playerUI;
-	private OutlineController outline;
 
-	private void Start()
-	{
-		outline = GetComponent<OutlineController>();
-		_playerProgress = FindObjectOfType<PlayerProgress>();
-		if (_playerProgress.DoorIsOpened)
-		{
-			outline.SetBool(true);
-		}
-	}
 	private void Update()
     {
         UpdatePressButton();

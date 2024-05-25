@@ -17,21 +17,12 @@ public class KeyScript : MonoBehaviour
     private Transform _playerTransform;
     private PlayerProgress _playerProgress;
     private InteractiveMode _playerUI;
-	public OutlineController outline;
 
-	private void Start()
-	{
-		outline = GetComponent<OutlineController>();
-	}
 	private void Update()
     {
 		_playerProgress = FindObjectOfType<PlayerProgress>();
 		UpdatePressButton();
         UpdateButtonIconRotation();
-		if (_playerProgress.StatuesRiddle)
-		{
-			outline.SetBool(true);
-		}
 	}
     private void UpdatePressButton()
     {
