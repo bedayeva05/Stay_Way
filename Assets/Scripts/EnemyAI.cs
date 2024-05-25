@@ -11,16 +11,19 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private bool _isPlayerNoticed;
     public float doorDetectionRange = 1f;
+    public float timeToChangePoint;
+
     void Start()
     {
-        _player = FindObjectOfType<PlayerController>();
-        InitComponentLinks();
+		timer = timeToChangePoint;
+		InitComponentLinks();
         PickNewPatrolPoint();
     }
 
     void Update()
     {
-        NoticePlayerUpdate();
+		_player = FindObjectOfType<PlayerController>();
+		NoticePlayerUpdate();
         ChaseUpdate();
         AttackUpdate();
         PatrolUpdate();
@@ -124,14 +127,26 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void PatrolUpdate()
+	private float timer;
+	private void PatrolUpdate()
     {
-        if (!_isPlayerNoticed)
+		
+		if (!_isPlayerNoticed)
         {
-            if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+            
+			if (timer > 0)
             {
-                PickNewPatrolPoint();
+                timer -= Time.deltaTime;
             }
+            else
+            {
+                if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+                {
+                    PickNewPatrolPoint();
+                    timer = timeToChangePoint;
+                } 
+			}
+            
         }
     }
 

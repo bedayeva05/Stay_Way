@@ -4,19 +4,23 @@ using UnityEditor;
 using UnityEngine;
 
 public class OutlineController : MonoBehaviour
-{
-    private Outline outline;
-	public float timer;
-	private float timerPref;
+{  
+    public Outline outline;
+	private bool lightSwitch;
+
 	private void Start()
 	{
 		outline = GetComponent<Outline>();
-		timerPref = timer;
+	}
+
+	public void SetBool(bool value)
+	{
+		lightSwitch = value;
 	}
 
 	private void OnMouseOver()
 	{
-		outline.enabled = true;
+		outline.enabled = lightSwitch ? true : false;
 	}
 	private void OnMouseExit()
 	{

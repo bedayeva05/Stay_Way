@@ -17,12 +17,23 @@ public class CrossScript : MonoBehaviour
     private Transform _playerTransform;
     private PlayerProgress _playerProgress;
     private InteractiveMode _playerUI;
+    private OutlineController outline;
 
-    private void Update()
+	private void Start()
+	{
+		outline = GetComponent<OutlineController>();
+        _playerProgress = FindObjectOfType<PlayerProgress>();
+	}
+	private void Update()
     {
         UpdatePressButton();
         UpdateButtonIconRotation();
-    }
+        if (_playerProgress.DoorIsOpened)
+        {
+			outline.SetBool(true);
+		}
+        
+	}
     private void UpdatePressButton()
     {
         if (!_playerIsNearby) return;
@@ -45,7 +56,7 @@ public class CrossScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
-        if (other.gameObject.GetComponent<PlayerProgress>().DoorIsOpened)
+        if (other.gameObject.GetComponent<PlayerProgress>().DoorIsOpened == true)
         {
             _playerIsNearby = true;
             _playerTransform = other.transform;
@@ -54,16 +65,6 @@ public class CrossScript : MonoBehaviour
             buttonIcon.SetActive(true);
         }
     }
-    /*private void OnTriggerEnter(Collider other)
-    {
-        var controller = other.GetComponent<PlayerController>();
-        if (!controller) return;
-
-        action.Invoke();
-        
-        if (!destroyAfterCollected) return;
-        Destroy(gameObject);
-    }*/
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.GetComponent<PlayerController>()) return;
