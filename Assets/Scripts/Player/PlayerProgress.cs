@@ -152,10 +152,13 @@ public class PlayerProgress : MonoBehaviour
         DoorIsOpened = true;
         SaveProgress();
     }
+    public void SetRoomDiscovered()
+    {
+        ResetUI();
+        FindRitualObjectsUI.SetActive(true);
+        SaveProgress();
 
-    /// НАДО ДОБАВИТЬ ТРИГГЕР ВХОДА В КОМНАТУ
-    //RoomExamineUI.SetActive(false);
-    //FindRitualObjectsUI.SetActive(true);
+    }
     public void SetCandles()
     {
         Candles = true;
