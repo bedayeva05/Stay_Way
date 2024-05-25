@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 teleportTarget = Vector3.zero;
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         _characterController = GetComponent<CharacterController>();
         _currentSpeed = walkingSpeed;
         _currentStamina = maxStamina;
@@ -37,7 +39,6 @@ public class PlayerController : MonoBehaviour
         StaminaUpdate();
         MovementUpdate();
         JumpUpdate();
-        //MenuUpdate();
     }
     void FixedUpdate()
     {
@@ -145,11 +146,8 @@ public class PlayerController : MonoBehaviour
         teleportTarget = target.position;
         shouldTeleport = true; 
     }
-    private void MenuUpdate()
+    public void MenuUpdate()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0);
-        }
+        SceneManager.LoadScene(0);
     }
 }
