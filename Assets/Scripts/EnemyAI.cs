@@ -8,7 +8,6 @@ public class EnemyAI : MonoBehaviour
     public float viewAngle = 120f;
     public float damage = 30f;
     public float doorDetectionRange = 1f;
-    public Animator animator;
 
     private PlayerController _player;
     private NavMeshAgent _navMeshAgent;
@@ -17,20 +16,19 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        _player = FindObjectOfType<PlayerController>();
         InitComponentLinks();
         PickNewPatrolPoint();
     }
 
     void Update()
     {
-        _player = FindObjectOfType<PlayerController>();
         NoticePlayerUpdate();
         ChaseUpdate();
         AttackUpdate();
         PatrolUpdate();
         DoorInteractionUpdate();
-
-        animator.SetBool("Walk", _navMeshAgent.velocity.magnitude > 0);
+        RotateTowardsMovementDirection();
     }
 
     private void InitComponentLinks()
@@ -69,36 +67,41 @@ public class EnemyAI : MonoBehaviour
                 if (Physics.Raycast(origin, direction, out hit, rayDistance) && hit.collider.gameObject == _player.gameObject)
                 {
                     _isPlayerNoticed = true;
+                    // Debug.Log("Player detected by raycast from height: " + origin.y);
                     return;
                 }
-            }
-
-            float sphereRadius = 0.5f;
-            Vector3 sphereCastOrigin = transform.position + Vector3.up * 1.0f;
-            Debug.DrawRay(sphereCastOrigin, direction, Color.green);
-
-            if (Physics.SphereCast(sphereCastOrigin, sphereRadius, direction, out hit, rayDistance) && hit.collider.gameObject == _player.gameObject)
-            {
-                _isPlayerNoticed = true;
             }
         }
     }
 
     private void DoorInteractionUpdate()
     {
-        if (_navMeshAgent.remainingDistance <= doorDetectionRange)
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, doorDetectionRange);
+        foreach (var hitCollider in hitColliders)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, doorDetectionRange);
-            foreach (var hitCollider in hitColliders)
+            Door door = hitCollider.GetComponent<Door>();
+            if (door != null)
             {
-                Door door = hitCollider.GetComponent<Door>();
-                if (door != null)
-                {
-                    door.ToggleDoor();
-                    // Debug.Log("Opening door");
-                    break;
-                }
+                door.ToggleDoor();
+                Debug.Log("Opening door");
+                break;
             }
+        }
+    }
+
+    private void PickNewPatrolPoint()
+    {
+        if (patrolPoints.Count == 0) return;
+        _navMeshAgent.destination = patrolPoints[_currentPatrolIndex].position;
+        _currentPatrolIndex = (_currentPatrolIndex + 1) % patrolPoints.Count;
+    }
+
+    private void ChaseUpdate()
+    {
+        if (_isPlayerNoticed)
+        {
+            Debug.Log(333);
+            _navMeshAgent.destination = _player.transform.position;
         }
     }
 
@@ -110,19 +113,13 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void PickNewPatrolPoint()
+    private void RotateTowardsMovementDirection()
     {
-        if (patrolPoints.Count == 0) return;
-
-        _navMeshAgent.destination = patrolPoints[_currentPatrolIndex].position;
-        _currentPatrolIndex = (_currentPatrolIndex + 1) % patrolPoints.Count;
-    }
-
-    private void ChaseUpdate()
-    {
-        if (_isPlayerNoticed)
+        Vector3 velocity = _navMeshAgent.velocity;
+        if (velocity.sqrMagnitude > Mathf.Epsilon) // Check if the agent is moving
         {
-            _navMeshAgent.destination = _player.transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(velocity, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _navMeshAgent.angularSpeed);
         }
     }
     /*public List<Transform> patrolPoints;
