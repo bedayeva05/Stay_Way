@@ -6,19 +6,22 @@ public class EnemyAI : MonoBehaviour
 {
     public List<Transform> patrolPoints;
     public float viewAngle = 120f;
-    public float damage = 30f;
     public float doorDetectionRange = 1f;
+    public float attackCooldown = 2f;
+    public Animator animator;
 
     private PlayerController _player;
     private NavMeshAgent _navMeshAgent;
     private bool _isPlayerNoticed;
     private int _currentPatrolIndex;
+    private float _lastAttackTime;
 
     void Start()
     {
         _player = FindObjectOfType<PlayerController>();
         InitComponentLinks();
         PickNewPatrolPoint();
+        _lastAttackTime = -attackCooldown;
     }
 
     void Update()
@@ -29,6 +32,7 @@ public class EnemyAI : MonoBehaviour
         PatrolUpdate();
         DoorInteractionUpdate();
         RotateTowardsMovementDirection();
+        UpdateAnimation();
     }
 
     private void InitComponentLinks()
@@ -40,9 +44,11 @@ public class EnemyAI : MonoBehaviour
     {
         if (_isPlayerNoticed && _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
         {
-            // Placeholder for attack logic
-            // Debug.Log("Attacking player");
-            // You can add your attack logic here, e.g., reduce player health
+            if (Time.time >= _lastAttackTime + attackCooldown) 
+            {
+                _player.GetComponent<PlayerHealth>().MakeDamage();
+                _lastAttackTime = Time.time; 
+            }
         }
     }
 
@@ -51,7 +57,7 @@ public class EnemyAI : MonoBehaviour
         Vector3 direction = _player.transform.position - transform.position;
         _isPlayerNoticed = false;
 
-        if (Vector3.Angle(transform.forward, direction) < viewAngle / 2f)
+        if (Vector3.Angle(transform.forward, direction) < viewAngle)
         {
             float rayDistance = Vector3.Distance(transform.position, _player.transform.position);
             Vector3[] rayOrigins = {
@@ -63,7 +69,7 @@ public class EnemyAI : MonoBehaviour
             RaycastHit hit;
             foreach (var origin in rayOrigins)
             {
-                Debug.DrawRay(origin, direction, Color.red);
+                //Debug.DrawRay(origin, direction, Color.red);
                 if (Physics.Raycast(origin, direction, out hit, rayDistance) && hit.collider.gameObject == _player.gameObject)
                 {
                     _isPlayerNoticed = true;
@@ -83,7 +89,7 @@ public class EnemyAI : MonoBehaviour
             if (door != null)
             {
                 door.ToggleDoor();
-                Debug.Log("Opening door");
+                //Debug.Log("Opening door");
                 break;
             }
         }
@@ -100,7 +106,6 @@ public class EnemyAI : MonoBehaviour
     {
         if (_isPlayerNoticed)
         {
-            Debug.Log(333);
             _navMeshAgent.destination = _player.transform.position;
         }
     }
@@ -121,6 +126,11 @@ public class EnemyAI : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(velocity, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _navMeshAgent.angularSpeed);
         }
+    }
+    private void UpdateAnimation()
+    {
+        bool isWalking = _navMeshAgent.velocity.sqrMagnitude > Mathf.Epsilon;
+        animator.SetBool("Walk", isWalking);
     }
     /*public List<Transform> patrolPoints;
     private PlayerController _player;
