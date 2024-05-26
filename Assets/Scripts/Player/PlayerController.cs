@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour
     }
     public void MenuUpdate()
     {
+        SceneManager.UnloadScene(SceneManager.GetActiveScene());
         SceneManager.LoadScene(0);
     }
 }

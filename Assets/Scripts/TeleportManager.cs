@@ -38,7 +38,7 @@ public class TeleportManager : MonoBehaviour
         List<Transform> targetPointsObjects = targetPoints.GetTargetPoints();
         if (targetPointsObjects != null)
         {
-            if (sceneIndex == 1)
+          /*  if (sceneIndex == 1)
             {
                 playerController.jumpforce = 3;
                 playerController.walkingSpeed = 2;
@@ -77,7 +77,7 @@ public class TeleportManager : MonoBehaviour
                 playerController.runningSpeed = 3;
                 float newYScale = 0.77f;
                 playerController.transform.localScale = new Vector3(playerController.transform.localScale.x, newYScale, playerController.transform.localScale.z);
-            }
+            } */
             playerController.TriggerTeleport(targetPointsObjects[teleportPointIndex].transform);
             
             Cursor.lockState = CursorLockMode.Locked;

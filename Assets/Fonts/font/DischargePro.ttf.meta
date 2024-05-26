@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c8c00ba50f2433a4f93be8d9efcab1cb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Discharge Pro
+  fontNames:
+  - Discharge Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b082b6b201ddb4649b0848609380f739, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

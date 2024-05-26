@@ -7,7 +7,7 @@ public class TitlesScript : MonoBehaviour
 {
     public void LoadTitles()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(7);
     }
     public void LoadMenu()
     {

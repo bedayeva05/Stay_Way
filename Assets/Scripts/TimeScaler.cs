@@ -7,5 +7,7 @@ public class TimeScaler : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

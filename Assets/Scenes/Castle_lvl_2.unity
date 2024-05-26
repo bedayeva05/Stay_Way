@@ -31790,6 +31790,7 @@ GameObject:
   - component: {fileID: 3305335481666080756}
   - component: {fileID: 3305335481666080757}
   - component: {fileID: 3305335481666080760}
+  - component: {fileID: 3305335481666080761}
   m_Layer: 0
   m_Name: RitualButton
   m_TagString: Untagged
@@ -31811,9 +31812,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3305335481666080761}
+        m_MethodName: SwitchScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   destroyAfterCollected: 1
   buttonIcon: {fileID: 270384241516365032}
+--- !u!114 &3305335481666080761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305335481666080759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f76dd6ad9b21b41ac6ecf7963f1fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 8
 --- !u!224 &3342128243670076120
 RectTransform:
   m_ObjectHideFlags: 0
