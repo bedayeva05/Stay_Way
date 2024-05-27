@@ -45,6 +45,5 @@ public class PauseManager : MonoBehaviour
     public void QuitGame()
     {
         SceneManager.LoadScene(0);
-        Application.Quit();
     }
 }
