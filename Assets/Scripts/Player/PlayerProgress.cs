@@ -19,6 +19,8 @@ public class PlayerProgress : MonoBehaviour
     public bool Chalk = false;
     public bool RitualIsReady = false;
 
+    public bool RoomExamine = false;
+
     public GameObject EscapeUI;
     public GameObject WholeMapUI;
     public GameObject FindEmptyBookUI;
@@ -159,9 +161,9 @@ public class PlayerProgress : MonoBehaviour
     public void SetRoomDiscovered()
     {
         ResetUI();
+        RoomExamine = true;
         FindRitualObjectsUI.SetActive(true);
         SaveProgress();
-
     }
     public void SetCandles()
     {
@@ -171,7 +173,7 @@ public class PlayerProgress : MonoBehaviour
         {
             ResetUI();
             MakeRitualUI.SetActive(true);
-        }
+		}
         SaveProgress();
     }
 
@@ -183,7 +185,7 @@ public class PlayerProgress : MonoBehaviour
         {
             ResetUI();
             MakeRitualUI.SetActive(true);
-        }
+		}
         SaveProgress();
     }
 
@@ -207,7 +209,7 @@ public class PlayerProgress : MonoBehaviour
         {
             ResetUI();
             MakeRitualUI.SetActive(true);
-        }
+		}
         SaveProgress();
     }
 

@@ -31791,6 +31791,7 @@ GameObject:
   - component: {fileID: 3305335481666080757}
   - component: {fileID: 3305335481666080760}
   - component: {fileID: 3305335481666080761}
+  - component: {fileID: 3305335481666080762}
   m_Layer: 0
   m_Name: RitualButton
   m_TagString: Untagged
@@ -31839,6 +31840,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 8
+--- !u!114 &3305335481666080762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305335481666080759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a00283461fb524e811ffec89837606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeScene: 0
+  destroyScene: 08000000
 --- !u!224 &3342128243670076120
 RectTransform:
   m_ObjectHideFlags: 0
