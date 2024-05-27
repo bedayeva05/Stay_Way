@@ -19,7 +19,13 @@ public class CrossScript : MonoBehaviour
     private InteractiveMode _playerUI;
 	private void Update()
     {
-        UpdatePressButton();
+		_playerProgress = FindObjectOfType<PlayerProgress>();
+		if (_playerProgress.Cross)
+		{
+			Destroy(gameObject);
+		}
+
+		UpdatePressButton();
         UpdateButtonIconRotation();
 	}
     private void UpdatePressButton()

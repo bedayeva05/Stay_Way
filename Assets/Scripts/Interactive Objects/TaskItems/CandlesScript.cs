@@ -19,7 +19,12 @@ public class CandlesScript : MonoBehaviour
 
 	private void Update()
     {
-        UpdatePressButton();
+		_playerProgress = FindObjectOfType<PlayerProgress>();
+		if (_playerProgress.Candles)
+		{
+			Destroy(gameObject);
+		}
+		UpdatePressButton();
         UpdateButtonIconRotation();
     }
     private void UpdatePressButton()

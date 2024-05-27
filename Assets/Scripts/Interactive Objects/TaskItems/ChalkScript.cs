@@ -21,7 +21,12 @@ public class ChalkScript : MonoBehaviour
 
 	private void Update()
     {
-        UpdatePressButton();
+		_playerProgress = FindObjectOfType<PlayerProgress>();
+		if (_playerProgress.Chalk)
+		{
+			Destroy(gameObject);
+		}
+		UpdatePressButton();
         UpdateButtonIconRotation();
 	}
     private void UpdatePressButton()

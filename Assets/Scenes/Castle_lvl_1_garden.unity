@@ -11918,6 +11918,7 @@ MonoBehaviour:
       m_Calls: []
   destroyAfterCollected: 1
   buttonIcon: {fileID: 9021513445878036541}
+  door: {fileID: 7909269805766969175}
 --- !u!114 &5993352933280428836
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,12 @@ public class MirrorScript : MonoBehaviour
     private InteractiveMode _playerUI;
 	private void Update()
     {
-        UpdatePressButton();
+		_playerProgress = FindObjectOfType<PlayerProgress>();
+		if (_playerProgress.Mirror)
+		{
+			Destroy(gameObject);
+		}
+		UpdatePressButton();
         UpdateButtonIconRotation();
 	}
     private void UpdatePressButton()

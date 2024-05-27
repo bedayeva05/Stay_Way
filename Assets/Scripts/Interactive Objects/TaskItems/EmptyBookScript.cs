@@ -20,7 +20,12 @@ public class EmptyBookScript : MonoBehaviour
 
 	private void Update()
     {
-        UpdatePressButton();
+		_playerProgress = FindObjectOfType<PlayerProgress>();
+		if (_playerProgress.EmptyBook)
+		{
+			Destroy(gameObject);
+		}
+		UpdatePressButton();
         UpdateButtonIconRotation();
 	}
     private void UpdatePressButton()

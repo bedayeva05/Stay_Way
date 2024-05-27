@@ -17,10 +17,16 @@ public class KeyScript : MonoBehaviour
     private Transform _playerTransform;
     private PlayerProgress _playerProgress;
     private InteractiveMode _playerUI;
+    public GameObject door;
 
 	private void Update()
     {
 		_playerProgress = FindObjectOfType<PlayerProgress>();
+		if (_playerProgress.KeyIsTaken)
+		{
+			Destroy(gameObject);
+			Destroy(door);
+		}
 		UpdatePressButton();
         UpdateButtonIconRotation();
 	}

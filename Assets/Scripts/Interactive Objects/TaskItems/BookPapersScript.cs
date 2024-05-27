@@ -20,7 +20,12 @@ public class BookPapersScript : MonoBehaviour
 
 	private void Update()
     {
-        UpdatePressButton();
+		_playerProgress = FindObjectOfType<PlayerProgress>();
+		if (_playerProgress.WholeBook)
+		{
+			Destroy(gameObject);
+		}
+		UpdatePressButton();
         UpdateButtonIconRotation();
 	}
     private void UpdatePressButton()

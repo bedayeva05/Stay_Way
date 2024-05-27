@@ -19,6 +19,11 @@ public class MapScript : MonoBehaviour
     private InteractiveMode _playerUI;
 	private void Update()
     {
+        _playerProgress = FindObjectOfType<PlayerProgress>();
+        if (_playerProgress.WholeMap)
+        {
+            Destroy(gameObject);
+        }
         UpdatePressButton();
         UpdateButtonIconRotation();
 	}
